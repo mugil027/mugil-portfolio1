@@ -15,7 +15,7 @@ const ProjectCard = ({ project, mirror = false }) => {
   useEffect(() => {
     let hideTimer;
     if (showControls) {
-      hideTimer = setTimeout(() => setShowControls(false), 1000); // hide after 2.5s
+      hideTimer = setTimeout(() => setShowControls(false), 1500); // hide after 2.5s
     }
     return () => clearTimeout(hideTimer);
   }, [showControls]);
