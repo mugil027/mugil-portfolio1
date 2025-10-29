@@ -10,6 +10,16 @@ const ProjectCard = ({ project, mirror = false }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showIcon, setShowIcon] = useState(false);
   const vidRef = useRef(null);
+  const [showControls, setShowControls] = useState(false);
+
+  useEffect(() => {
+    let hideTimer;
+    if (showControls) {
+      hideTimer = setTimeout(() => setShowControls(false), 1000); // hide after 2.5s
+    }
+    return () => clearTimeout(hideTimer);
+  }, [showControls]);
+
 
   // 🔹 Preload video for smoother playback
   useEffect(() => {
@@ -73,17 +83,24 @@ const ProjectCard = ({ project, mirror = false }) => {
             ))}
           </Swiper>
         ) : project.video ? (
-          <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-[#1b1b1b]/70 rounded-[25px] shadow-[0_0_40px_rgba(255,255,255,0.15)] ring-1 ring-white/10 p-[4px] md:p-[6px]">
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-[#1b1b1b]/70 rounded-[25px] shadow-[0_0_40px_rgba(255,255,255,0.15)] ring-1 ring-white/10 p-[4px] md:p-[6px] aspect-video">
             <video
               ref={vidRef}
               src={project.video}
               preload="auto"
-              className="w-full h-auto object-contain rounded-[20px] transition-transform duration-500 hover:scale-[1.02]"
+              className={`w-full aspect-video max-h-[720px] object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.06] 
+                ${isPlaying ? "opacity-100" : "opacity-100"} 
+                ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
               playsInline
-              controls={true}
+              controls={showControls}
               controlsList="nodownload noremoteplayback"
               onClick={handleToggle}
+              onMouseMove={() => setShowControls(true)}
+              onTouchStart={() => setShowControls(true)}
+              onMouseLeave={() => setShowControls(false)}
             />
+
+            
 
             {/* 🔘 Play / Pause Icon */}
             {showIcon && (
@@ -131,10 +148,12 @@ const ProjectCard = ({ project, mirror = false }) => {
             {/* Caption */}
             <p
               onClick={handleToggle}
-              className="mt-4 text-lg text-[#00B4DB] font-medium tracking-wide italic opacity-90 hover:opacity-100 transition cursor-pointer select-none"
+              className="mt-1 text-sm text-[#00B4DB]/90 font-normal italic opacity-80 hover:opacity-100 transition cursor-pointer select-none"
+              
             >
-              🎬 Tap to Play / Pause the Video
+              🎬 Tap to Play / Pause
             </p>
+
           </div>
 
 
