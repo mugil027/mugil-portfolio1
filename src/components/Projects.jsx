@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <section id="projects" className="relative z-10 py-20 bg-[#0a0a0a] text-white">
+    <section id="projects" className="relative z-10 pt-20 pb-10 bg-[#0a0a0a] text-white">
+
       <div className="max-w-6xl mx-auto px-6">
         {/* ---------- Animated Heading ---------- */}
         <motion.div

@@ -173,7 +173,7 @@ function App() {
       <Projects />
 
       {/* ---------- CONTACT SECTION ---------- */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="pt-8 pb-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             Let’s work together
