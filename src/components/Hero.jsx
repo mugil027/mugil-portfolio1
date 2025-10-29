@@ -6,7 +6,7 @@ import InteractiveBackground from "./InteractiveBackground";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[96vh] flex flex-col md:flex-row items-center justify-center px-8 md:px-24 bg-[#0a0a0a] text-white gap-10 md:gap-20 overflow-hidden">
+   <section className="relative min-h-[100vh] flex flex-col md:flex-row items-center justify-center px-8 md:px-24 pt-24 md:pt-0 bg-[#0a0a0a] text-white gap-10 md:gap-20 overflow-hidden">
 
         <InteractiveBackground />  {/* 👈 Added line */}
         
