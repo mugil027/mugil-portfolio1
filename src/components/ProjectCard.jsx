@@ -138,12 +138,16 @@ const ProjectCard = ({ project, mirror = false }) => {
 
 
             {/* Caption */}
-            <p className="mt-4 text-base text-white font-medium tracking-wide italic opacity-90 hover:opacity-100 transition">
+            <p
+              onClick={handleToggle}
+              className="mt-4 text-base text-white font-medium tracking-wide italic opacity-90 hover:opacity-100 transition cursor-pointer select-none"
+            >
               🎬{" "}
-              <span className="text-gradient bg-gradient-to-r from-[#00B4DB] to-[#0083B0] bg-clip-text text-transparent">
-                 Tap to Play / Pause the Video
+              <span className="text-gradient bg-gradient-to-r from-[#00B4DB] to-[#0083B0] bg-clip-text text-transparent hover:underline">
+                Tap to Play / Pause the Video
               </span>
             </p>
+
           </div>
         ) : null}
       </div>
