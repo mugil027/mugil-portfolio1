@@ -2,10 +2,14 @@ import { motion } from "framer-motion";
 import mugilPhoto from "../assets/mugil.jpeg"; // 🧠 make sure this image exists in src/assets/
 import InteractiveBackground from "./InteractiveBackground";
 
+
+
 const Hero = () => {
   return (
-    <section className="relative min-h-[100vh] flex flex-col md:flex-row items-center justify-center px-8 md:px-24 bg-[#0a0a0a] text-white gap-10 md:gap-20 overflow-hidden">
+    <section className="relative min-h-[96vh] flex flex-col md:flex-row items-center justify-center px-8 md:px-24 bg-[#0a0a0a] text-white gap-10 md:gap-20 overflow-hidden">
+
         <InteractiveBackground />  {/* 👈 Added line */}
+        
 
       {/* 🌈 Floating Gradient Background Glow */}
       <motion.div
@@ -43,7 +47,7 @@ const Hero = () => {
         className="flex-1 text-center md:text-right flex flex-col items-center md:items-end z-10"
         initial={{ opacity: 0, x: 80 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 3.7, delay: 0.8, ease: "easeOut" }}
+        transition={{ duration: 2.7, delay: 0.8, ease: "easeOut" }}
       >
         {/* 🌀 Rotating Ring + Image */}
         <div className="relative w-52 h-52 md:w-64 md:h-64 mb-6">
