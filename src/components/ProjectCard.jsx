@@ -88,10 +88,13 @@ const ProjectCard = ({ project, mirror = false }) => {
               ref={vidRef}
               src={project.video}
               preload="auto"
-              className={`w-full aspect-video max-h-[720px] object-contain md:object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.01] 
+              className={`w-full aspect-video max-h-[720px] object-contain md:object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.06] 
                 ${isPlaying ? "opacity-100" : "opacity-100"} 
                 ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
               playsInline
+              webkit-playsinline="true"
+              x5-playsinline="true"
+              x-webkit-airplay="allow"
               controls={showControls}
               controlsList="nodownload noremoteplayback"
               onClick={handleToggle}
