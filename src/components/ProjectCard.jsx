@@ -34,15 +34,15 @@ const ProjectCard = ({ project, mirror = false }) => {
       setIsPlaying(true);
     }
 
-    // 👇 Show the icon briefly on click
+    // 👇 Brief play/pause icon animation
     setShowIcon(true);
     setTimeout(() => setShowIcon(false), 800);
   };
 
   return (
     <motion.article
-      className={`grid md:grid-cols-[0.9fr_1fr] gap-12 items-center py-20 border-b border-white/20 ${
-        mirror ? "md:[&>*:first-child]:order-2" : ""
+      className={`flex flex-col lg:flex-row items-center justify-center py-20 border-b border-white/20 gap-12 ${
+        mirror ? "lg:flex-row-reverse" : ""
       }`}
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -50,11 +50,7 @@ const ProjectCard = ({ project, mirror = false }) => {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* ---------- MEDIA SECTION ---------- */}
-      <div
-        className={`flex flex-col items-center justify-center w-full rounded-2xl bg-card ring-1 ring-white/10 shadow-2xl ${
-          project.video ? "p-0 overflow-visible" : "p-3 overflow-hidden"
-        }`}
-      >
+      <div className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%]">
         {project.images ? (
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
@@ -64,37 +60,32 @@ const ProjectCard = ({ project, mirror = false }) => {
             pagination={{ clickable: true }}
             navigation
             loop
-            className="w-full max-h-[620px] rounded-2xl"
+            className="w-[90%] max-w-[700px] rounded-2xl"
           >
             {project.images.map((img, i) => (
               <SwiperSlide key={i}>
                 <img
                   src={img}
                   alt={`${project.title}-${i}`}
-                  className="w-[100%] h-auto max-h-[550px] object-contain bg-black rounded-2xl mx-auto"
+                  className="w-[90%] h-auto max-h-[550px] object-contain bg-black rounded-2xl mx-auto"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
         ) : project.video ? (
-          <div className="relative flex flex-col items-center justify-center w-full">
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-[#1b1b1b]/70 rounded-[25px] shadow-[0_0_40px_rgba(255,255,255,0.15)] ring-1 ring-white/10 p-[4px] md:p-[6px]">
             <video
               ref={vidRef}
               src={project.video}
               preload="auto"
-              className={`transition-transform duration-500 hover:scale-[1.03] ${
-                ["expense tracker", "bird classifier (cnn)"].includes(
-                  project.title.trim().toLowerCase()
-                )
-                  ? "w-[95%] max-h-[1000px]"
-                  : "w-[90%] max-h-[900px]"
-              } h-auto object-contain bg-black rounded-3xl shadow-[0_0_40px_rgba(255,255,255,0.15)] mx-auto`}
+              className="w-full h-auto object-contain rounded-[20px] transition-transform duration-500 hover:scale-[1.02]"
               playsInline
-              controls={false}
+              controls={true}
+              controlsList="nodownload noremoteplayback"
               onClick={handleToggle}
             />
 
-            {/* 🔘 Briefly visible play/pause icon */}
+            {/* 🔘 Play / Pause Icon */}
             {showIcon && (
                 <motion.div
                     initial={{ opacity: 0, scale: 0.6 }}
@@ -103,7 +94,7 @@ const ProjectCard = ({ project, mirror = false }) => {
                     scale: [0.8, 1, 1.1, 1],
                     filter: [
                         "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                        "drop-shadow(0 0 10px rgba(10, 95, 233, 0.7))",
+                        "drop-shadow(0 0 10px rgba(0, 81, 211, 0.92))",
                         "drop-shadow(0 0 18px rgba(125,211,252,0.8))",
                         "drop-shadow(0 0 0px rgba(0,0,0,0))",
                     ],
@@ -140,26 +131,24 @@ const ProjectCard = ({ project, mirror = false }) => {
             {/* Caption */}
             <p
               onClick={handleToggle}
-              className="mt-4 text-base text-white font-medium tracking-wide italic opacity-90 hover:opacity-100 transition cursor-pointer select-none"
+              className="mt-4 text-lg text-[#00B4DB] font-medium tracking-wide italic opacity-90 hover:opacity-100 transition cursor-pointer select-none"
             >
-              🎬{" "}
-              <span className="text-gradient bg-gradient-to-r from-[#00B4DB] to-[#0083B0] bg-clip-text text-transparent hover:underline">
-                Tap to Play / Pause the Video
-              </span>
+              🎬 Tap to Play / Pause the Video
             </p>
-
           </div>
+
+
         ) : null}
       </div>
 
       {/* ---------- TEXT SECTION ---------- */}
-      <div className="max-w-[480px]">
-        <h3 className="text-2xl md:text-3xl font-semibold">{project.title}</h3>
-        <p className="mt-3 text-white/80 text-justify leading-[1.8] tracking-[0.02em] max-w-[720px]">
+      <div className="max-w-[480px] text-center lg:text-left">
+        <h3 className="text-3xl md:text-4xl font-semibold">{project.title}</h3>
+        <p className="mt-4 text-white/80 text-justify leading-[1.8] tracking-[0.02em]">
           {project.description}
         </p>
 
-        <ul className="flex flex-wrap gap-2 mt-4">
+        <ul className="flex flex-wrap gap-2 mt-5 justify-center lg:justify-start">
           {project.tech.map((t) => (
             <li
               key={t}
@@ -170,7 +159,7 @@ const ProjectCard = ({ project, mirror = false }) => {
           ))}
         </ul>
 
-        <div className="mt-6 flex gap-3 flex-wrap">
+        <div className="mt-6 flex gap-3 flex-wrap justify-center lg:justify-start">
           {project.github && (
             <a
               href={project.github}
