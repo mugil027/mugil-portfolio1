@@ -19,3 +19,20 @@ html {
 ::selection {
   background: #ffffff22;
 }
+
+@keyframes orbFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: brightness(0.5);
+  }
+  to {
+    opacity: 0.6;          /* 👈 soft ring glow */
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+.animate-orbFadeIn {
+  animation: orbFadeIn 1.8s ease-out forwards;
+}

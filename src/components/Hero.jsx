@@ -1,16 +1,26 @@
 import { motion } from "framer-motion";
 import mugilPhoto from "../assets/mugil.jpeg"; // 🧠 make sure this image exists in src/assets/
 import InteractiveBackground from "./InteractiveBackground";
-
+import Orb from "./Orb";
 
 
 const Hero = () => {
   return (
    <section className="relative min-h-[100vh] flex flex-col md:flex-row items-center justify-center px-8 md:px-24 pt-24 md:pt-0 bg-[#0a0a0a] text-white gap-10 md:gap-20 overflow-hidden">
 
-        <InteractiveBackground />  {/* 👈 Added line */}
         
+        <InteractiveBackground />  {/* 👈 Added line */}
+      
+        {/* ORB — larger, softer, delayed */}
+        <div
+          className="absolute left-[-2%] top-[-1%] w-[500px] h-[500px] md:w-[750px] md:h-[750px] lg:w-[850px] lg:h-[850px]z-0 opacity-0 animate-orbFadeIn"
+          style={{ animationDelay: "2s", animationFillMode: "forwards" }}
+        >
+          <Orb hoverIntensity={2} rotateOnHover={true} hue={260} />
+        </div>
 
+        
+                      
       {/* 🌈 Floating Gradient Background Glow */}
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 blur-[150px] opacity-10"
@@ -29,7 +39,7 @@ const Hero = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.7, delay: 0.5, ease: "easeOut" }}
         >
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-[0_5px_20px_rgba(255,255,255,0.25)]">
+        <h1 className="text-5xl md:text-7xl font-bold leading-[1.2] tracking-tight drop-shadow-[0_5px_20px_rgba(255,255,255,0.25)]">
             Welcome To My Portfolio
         </h1>
 
