@@ -11,9 +11,17 @@ const Hero = () => {
         
         <InteractiveBackground />  {/* 👈 Added line */}
       
-        {/* ORB — larger, softer, delayed */}
+        {/* ORB — larger, softer, delayed + responsive */}
         <div
-          className="absolute left-[-2%] top-[-1%] w-[500px] h-[500px] md:w-[750px] md:h-[750px] lg:w-[850px] lg:h-[850px]z-0 opacity-0 animate-orbFadeIn"
+          className="absolute 
+                    left-[4%] top-[-1%] 
+                    -translate-x-1/2 -translate-y-1/2
+                    w-[1120px] h-[320px] 
+                    sm:w-[420px] sm:h-[420px] 
+                    md:w-[500px] md:h-[500px] 
+                    lg:w-[650px] lg:h-[650px] 
+                    xl:w-[750px] xl:h-[750px]
+                    z-0 opacity-0 animate-orbFadeIn"
           style={{ animationDelay: "2s", animationFillMode: "forwards" }}
         >
           <Orb hoverIntensity={2} rotateOnHover={true} hue={260} />
