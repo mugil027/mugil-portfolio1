@@ -87,6 +87,7 @@ const ProjectCard = ({ project, mirror = false }) => {
             <video
               ref={vidRef}
               src={project.video}
+              poster={project.cover}
               preload="auto"
               className={`w-full aspect-video max-h-[720px] object-contain md:object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.06] 
                 ${isPlaying ? "opacity-100" : "opacity-100"} 

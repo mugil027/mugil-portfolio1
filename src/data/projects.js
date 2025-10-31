@@ -21,8 +21,9 @@ export const projects = [
     title: "Expense Tracker",
     description:
       "A full-stack React + Flask application designed for tracking expenses, managing budgets, and visualizing spending analytics. It features secure JWT authentication, automated email alerts powered by APScheduler, and real-time expense summaries. The app is fully responsive and deployed seamlessly on Render.",
-    tech: ["React", "Flask", "MongoDB", "JWT", "Render"],
+    tech: ["React", "Flask", "MongoDB", "JWT", "Render", "Data Visualization"],
     video: "/videos/ExpenseTracker.mp4",
+    cover: "/images/ExpenseCover.png",
     github: "https://github.com/mugil027/ExpenseTracker",
     demo: "",
   },
@@ -33,6 +34,7 @@ export const projects = [
       "A fine-tuned DenseNet121 convolutional neural network model built for bird species classification. The system includes a Flask-based API and a responsive front-end for image uploads and real-time predictions. It achieves high accuracy through model fine-tuning and transfer learning, providing a user-friendly interface for species recognition.",
     tech: ["TensorFlow", "Keras", "Flask", "Tailwind CSS"],
     video: "/videos/final_link.mp4",
+    cover: "/images/image.png",
     github: "https://github.com/mugil027/BirdClassiferCNN_with_WebAPP",
     demo: "",
   },
