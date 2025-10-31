@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import mugilPhoto from "../assets/mugil.jpeg"; // 🧠 make sure this image exists in src/assets/
 import InteractiveBackground from "./InteractiveBackground";
-import Orb from "./Orb";
+
 
 
 const Hero = () => {
@@ -10,24 +10,7 @@ const Hero = () => {
 
         
         <InteractiveBackground />  {/* 👈 Added line */}
-      
-        {/* ORB — larger, softer, delayed + responsive */}
-        <div
-          className="absolute 
-                    left-[4%] top-[-1%] 
-                    -translate-x-1/2 -translate-y-1/2
-                    w-[1120px] h-[320px] 
-                    sm:w-[420px] sm:h-[420px] 
-                    md:w-[500px] md:h-[500px] 
-                    lg:w-[650px] lg:h-[650px] 
-                    xl:w-[750px] xl:h-[750px]
-                    z-0 opacity-0 animate-orbFadeIn"
-          style={{ animationDelay: "2s", animationFillMode: "forwards" }}
-        >
-          <Orb hoverIntensity={2} rotateOnHover={true} hue={260} />
-        </div>
-
-        
+     
                       
       {/* 🌈 Floating Gradient Background Glow */}
       <motion.div
