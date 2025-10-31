@@ -32,7 +32,7 @@ export const projects = [
     title: "Bird Classifier (CNN)",
     description:
       "A fine-tuned DenseNet121 convolutional neural network model built for bird species classification. The system includes a Flask-based API and a responsive front-end for image uploads and real-time predictions. It achieves high accuracy through model fine-tuning and transfer learning, providing a user-friendly interface for species recognition.",
-    tech: ["TensorFlow", "Keras", "Flask", "Tailwind CSS"],
+    tech: ["TensorFlow", "Keras", "Machine Learning", "Flask", "Tailwind CSS"],
     video: "/videos/final_link.mp4",
     cover: "/images/image.png",
     github: "https://github.com/mugil027/BirdClassiferCNN_with_WebAPP",
