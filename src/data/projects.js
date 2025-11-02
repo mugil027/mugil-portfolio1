@@ -1,4 +1,17 @@
 export const projects = [
+
+  {
+    id: 4,
+    title: "Live Air Traffic ETL Pipeline",
+    description:
+      "A complete real-time ETL pipeline for live air traffic monitoring built from scratch using Kafka, Zookeeper, PostgreSQL, Python, and FastAPI. The system extracts live flight data from the ADS-B Exchange API, streams it through Kafka topics, aggregates regional and city-wise metrics, and visualizes them on an interactive React dashboard.",
+    tech: ["Kafka", "FastAPI", "PostgreSQL", "Python", "React", "Vercel"],
+    video: "/videos/ETL_Flight.mp4", // 👈 path to your project demo video
+    cover: "/images/ETL2.png",
+    github: "https://github.com/mugil027/Live_Air_Traffic_Monitoring",
+    demo: "",
+  },
+
   {
     id: 1,
     title: "Land Deed Scrutinizer",
@@ -38,4 +51,7 @@ export const projects = [
     github: "https://github.com/mugil027/BirdClassiferCNN_with_WebAPP",
     demo: "",
   },
+
+
+
 ];
