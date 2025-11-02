@@ -38,7 +38,7 @@ export const projects = [
     video: "/videos/ExpenseTracker.mp4",
     cover: "/images/ExpenseCover.png",
     github: "https://github.com/mugil027/ExpenseTracker",
-    demo: "",
+    demo: "https://expensetracker-1-hjsa.onrender.com/",
   },
   {
     id: 3,

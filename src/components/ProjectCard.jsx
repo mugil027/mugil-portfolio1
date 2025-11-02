@@ -198,7 +198,7 @@ const ProjectCard = ({ project, mirror = false }) => {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-white/10 ring-1 ring-white/20 text-sm"
+              className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium"
             >
               Live Demo
             </a>
