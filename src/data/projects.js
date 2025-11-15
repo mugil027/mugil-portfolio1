@@ -2,6 +2,18 @@ export const projects = [
 
   {
     id: 4,
+    title: "E-Commerce Intelligence Analytics system (Fully Automated)",
+    description:
+      "•	Engineered a production-style ETL pipeline using Airflow to orchestrate ingestion from AWS S3 into Snowflake and automated transformation with dbt. Built Python-based data generators, Snowflake staging layers, and a curated fact model for end-to-end data warehousing. Containerized the pipeline with Docker and implemented S3 sensors, Snowflake COPY commands, and dbt workflows for reliable, fully automated daily data refresh",
+    tech: ["Python, Airflow, DAG, AWS S3, Snowflake, dbt, Docker, Power BI"],
+    video: "/videos/Ecom_Intel.mp4", // 👈 path to your project demo video
+    cover: "/images/Ecom_cover.png",
+    github: "",
+    demo: "",
+  },
+
+  {
+    id: 4,
     title: "Live Air Traffic ETL Pipeline",
     description:
       "A complete real-time ETL pipeline for live air traffic monitoring built from scratch using Kafka, Zookeeper, PostgreSQL, Python, and FastAPI. The system extracts live flight data from the ADS-B Exchange API, streams it through Kafka topics, aggregates regional and city-wise metrics, and visualizes them on an interactive React dashboard.",
