@@ -6,7 +6,7 @@ export const projects = [
     description:
       "Engineered a production-style ETL pipeline using Airflow to orchestrate ingestion from AWS S3 into Snowflake and automated transformation with dbt. Built Python-based data generators, Snowflake staging layers, and a curated fact model for end-to-end data warehousing. Containerized the pipeline with Docker and implemented S3 sensors, Snowflake COPY commands, and dbt workflows for reliable, fully automated daily data refresh",
     tech: ["Python", "Airflow", "DAG", "AWS S3", "Snowflake", "dbt", "Docker", "Power BI"],
-    video: "/videos/Ecom_Intel.mp4", // 👈 path to your project demo video
+    video: "/videos/Ecom_videos.mp4", // 👈 path to your project demo video
     cover: "/images/Ecom_cover.png",
     github: "",
     demo: "",
