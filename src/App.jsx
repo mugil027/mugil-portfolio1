@@ -11,14 +11,11 @@ function App() {
   // ---------- THEME STATE ----------
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") return "dark";
-
     const stored = localStorage.getItem("theme");
-    if (stored) return stored;
-
-    // DEFAULT THEME → DARK
-    return "dark";
+    if (stored === "light" || stored === "dark") return stored;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark ? "dark" : "light";
   });
-
 
   const [open, setOpen] = useState(false);
   const toggleMenu = () => setOpen((v) => !v);
