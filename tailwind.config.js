@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -7,8 +8,11 @@ export default {
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
-        bg: "#0b0b0d",  // deep dark
-        card: "#121214",
+        bg: "#050816",          // dark background
+        card: "#0f172a",        // dark surface
+        bgLight: "#f5f5f7",     // light background
+        cardLight: "#ffffff",   // light surface
+        accent: "#6366f1",      // main accent
       },
     },
   },

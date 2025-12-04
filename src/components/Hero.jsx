@@ -1,99 +1,111 @@
 import { motion } from "framer-motion";
-import mugilPhoto from "../assets/mugil.jpeg"; // 🧠 make sure this image exists in src/assets/
-import InteractiveBackground from "./InteractiveBackground";
-
-
+import mugilPhoto from "../assets/mugil.jpeg";
 
 const Hero = () => {
   return (
-   <section
-      className="
-        relative 
-        min-h-[100vh]
-        flex flex-col md:flex-row 
-        items-center justify-center
-        px-6 sm:px-10 md:px-20 lg:px-24
-        pt-20 md:pt-0
-        bg-[#0a0a0a] text-white
-        gap-10 md:gap-20 
-        overflow-hidden
-      "
-    >
+    <section className="relative min-h-[100vh] flex items-center pt-24 pb-16">
+      <div className="absolute inset-0 bg-gradient-to-b from-bgLight via-white to-slate-100 dark:from-bg dark:via-bg dark:to-slate-900 -z-10" />
 
-        
-        <InteractiveBackground />  {/* 👈 Added line */}
-     
-                      
-      {/* 🌈 Floating Gradient Background Glow */}
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 blur-[150px] opacity-10"
-        animate={{
-          x: [0, 30, 0, -30, 0],
-          y: [0, -20, 0, 20, 0],
-        }}
-        transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
-      />
-
-      {/* LEFT SIDE — Title Section */}
-      {/* LEFT SIDE — Title Section */}
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        {/* LEFT: Text */}
         <motion.div
-        className="flex-1 text-center md:text-left z-10"
-        initial={{ opacity: 0, x: -80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.7, delay: 0.5, ease: "easeOut" }}
+          className="flex-1 text-center md:text-left"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-        <h1 className="text-5xl md:text-7xl font-bold leading-[1.2] tracking-tight drop-shadow-[0_5px_20px_rgba(255,255,255,0.25)]">
-            Welcome To My Portfolio
-        </h1>
+          <p className="text-xs uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400 mb-4">
+            Portfolio · Data Engineering · AI
+          </p>
 
-        {/* Underline */}
-        <motion.div
-            className="h-[4px] w-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 mt-4 rounded-full mx-auto md:mx-0"
-            animate={{ width: "60%" }}
-            transition={{ duration: 1.7, delay: 1.5, ease: "easeOut" }}
-        />
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+            Welcome To{" "}
+            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              My Portfolio
+            </span>
+          </h1>
+
+          <p className="mt-5 text-base md:text-lg text-slate-600 dark:text-gray-300 max-w-xl md:max-w-2xl">
+            An Aspiring Data Engineer leveraging AI and analytics to solve
+            complex problems with precision and creativity.
+          </p>
+
+          <p className="mt-3 text-sm md:text-base text-slate-500 dark:text-gray-400 italic">
+            Building intelligent systems that merge AI, creativity, and
+            precision.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-black text-white text-sm font-medium shadow-md hover:shadow-lg hover:-translate-y-[1px] transition-all"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-slate-300/90 text-sm font-medium text-slate-800 bg-white/70 backdrop-blur hover:border-slate-500 dark:border-white/30 dark:bg-card/70 dark:text-white transition-all"
+            >
+              Get in touch
+            </a>
+          </div>
         </motion.div>
 
+        {/* RIGHT: Profile Card */}
+       <motion.div
+          className="flex-1 flex justify-center md:justify-end"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.1, ease: "easeOut" }}
+        >
+          <div className="relative w-full max-w-md">
+            {/* Outer Glow */}
+            <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-tr from-pink-500/40 via-indigo-500/40 to-purple-500/40 blur-2xl opacity-50" />
 
-      {/* RIGHT SIDE — Photo + Text Section */}
-      <motion.div
-        className="flex-1 text-center md:text-right flex flex-col items-center md:items-end z-10"
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 2.7, delay: 0.8, ease: "easeOut" }}
-      >
-        {/* 🌀 Rotating Ring + Image */}
-        <div className="relative w-52 h-52 md:w-64 md:h-64 mb-6">
-          {/* rotating border ring */}
-          <motion.div
-            className="absolute inset-0 rounded-full border-[3px] border-transparent bg-[conic-gradient(from_0deg,rgba(59,130,246,0.8),rgba(236,72,153,0.8),rgba(147,51,234,0.8),rgba(59,130,246,0.8))]"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-          />
-          {/* Your photo inside */}
-          <img
-            src={mugilPhoto}
-            alt="Mugil M"
-            className="absolute inset-[6px] w-[calc(100%-12px)] h-[calc(100%-12px)] object-cover rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-          />
-        </div>
+            <div className="relative rounded-[32px] bg-white dark:bg-card/90 border border-slate-200/70 dark:border-white/10 p-10 flex flex-col items-center gap-6 shadow-[0_25px_60px_rgba(0,0,0,0.20)] backdrop-blur-xl">
+              
+              {/* Bigger DP */}
+              <div className="relative">
+                <div className="h-44 w-44 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-[4px] shadow-2xl">
+                  <div className="h-full w-full rounded-full overflow-hidden bg-slate-900/80">
+                    <img
+                      src={mugilPhoto}
+                      alt="Mugil M"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
 
-        {/* Your name */}
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]">
-          MUGIL M
-        </h2>
+              {/* Text */}
+              <div className="text-center space-y-1">
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+                  MUGIL M
+                </h2>
 
-        {/* Description */}
-        <p className="text-lg md:text-xl text-gray-300 max-w-lg md:ml-auto leading-relaxed">
-          An Aspiring Data Engineer leveraging AI and analytics to solve complex
-          problems with precision and creativity.
-        </p>
+                <p className="text-[13px] uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
+                  Aspiring Data Engineer
+                </p>
 
-        {/* Tagline */}
-        <p className="text-md md:text-lg text-gray-400 mt-3 italic">
-          Building intelligent systems that merge AI, creativity, and precision.
-        </p>
-      </motion.div>
+                <p className="text-sm font-medium tracking-wide text-indigo-600 dark:text-indigo-400">
+                  Founder of Socionn
+                </p>
+              </div>
+
+              {/* Line */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300/70 dark:via-white/10 to-transparent" />
+
+              {/* Bio */}
+              <p className="text-sm text-slate-600 dark:text-slate-300 text-center leading-relaxed max-w-sm">
+                Passionate about building data pipelines, intelligent systems, and 
+                real-world applications that connect AI with impactful user experiences.
+              </p>
+
+            </div>
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   );
 };

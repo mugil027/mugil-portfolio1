@@ -1,85 +1,141 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 function App() {
+  // ---------- THEME STATE ----------
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === "undefined") return "dark";
+
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+
+    // DEFAULT THEME → DARK
+    return "dark";
+  });
+
+
   const [open, setOpen] = useState(false);
-  const toggleMenu = () => setOpen(!open);
+  const toggleMenu = () => setOpen((v) => !v);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
-    <main className="font-sans bg-bg">
+    <main className="font-sans min-h-screen bg-bgLight text-slate-900 dark:bg-bg dark:text-white transition-colors duration-500">
       {/* ---------- NAVBAR ---------- */}
-      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur supports-[backdrop-filter]:bg-bg/60 border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between text-white">
-          <a href="#" className="font-semibold text-lg">MUGIL M</a>
+      <nav className="fixed top-0 left-0 w-full z-50 border-b border-slate-200/70 dark:border-white/10 bg-cardLight/80 dark:bg-bg/70 backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+          <a
+            href="#"
+            className="font-semibold text-lg tracking-tight flex items-center gap-2"
+          >
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 text-xs font-bold">
+              MM
+            </span>
+            <span className="hidden sm:inline">MUGIL M</span>
+          </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-6 text-white/80">
-            <a href="#projects" className="hover:text-white">Projects</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
-
-            <a
-              href="https://www.linkedin.com/in/mugil-m-47597a352/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#0A66C2] 
-                        drop-shadow-[0_0_6px_rgba(10,102,194,0.8)] 
-                        hover:drop-shadow-[0_0_14px_rgba(10,102,194,1)] 
-                        hover:text-[#1a75d1]
-                        transition-all duration-300"
-            >
-              <FaLinkedin className="w-5 h-5" />
+          <div className="hidden md:flex items-center gap-6 text-sm text-slate-600 dark:text-white/80">
+            <a href="#projects" className="hover:text-accent transition-colors">
+              Projects
+            </a>
+            <a href="#contact" className="hover:text-accent transition-colors">
+              Contact
             </a>
 
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=mugil272000@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#EA4335] 
-                        drop-shadow-[0_0_6px_rgba(234,67,53,0.8)] 
-                        hover:drop-shadow-[0_0_14px_rgba(234,67,53,1)] 
-                        hover:text-[#ff6b6b]
-                        transition-all duration-300"
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              className="ml-2 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium border border-slate-200 dark:border-white/20 bg-white/70 dark:bg-card/70 shadow-sm hover:shadow-md transition-all"
             >
-              <SiGmail className="w-5 h-5" />
-            </a>
+              {theme === "dark" ? (
+                <>
+                  <Sun className="w-4 h-4" />
+                  <span>Light</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="w-4 h-4" />
+                  <span>Dark</span>
+                </>
+              )}
+            </button>
 
-            <a
-              href="https://github.com/mugil027"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white 
-                        drop-shadow-[0_0_6px_rgba(255,255,255,0.5)] 
-                        hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.9)]
-                        hover:text-gray-300
-                        transition-all duration-300"
-            >
-              <FaGithub className="w-5 h-5" />
-            </a>
+            {/* Social icons */}
+            <div className="flex items-center gap-3 pl-2 border-l border-slate-200/60 dark:border-white/10">
+              <a
+                href="https://www.linkedin.com/in/mugil-m-47597a352/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0A66C2] hover:scale-110 transition-transform"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </a>
 
-            <a
-              href="https://www.instagram.com/mugil.27/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 
-                        drop-shadow-[0_0_6px_rgba(216,70,239,0.7)] 
-                        hover:drop-shadow-[0_0_14px_rgba(216,70,239,1)] 
-                        hover:text-purple-400
-                        transition-all duration-300"
-            >
-              <FaInstagram className="w-5 h-5" />
-            </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mugil272000@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#EA4335] hover:scale-110 transition-transform"
+              >
+                <SiGmail className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://github.com/mugil027"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <FaGithub className="w-5 h-5" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/mugil.27/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:scale-110 transition-transform"
+              >
+                <FaInstagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <button onClick={toggleMenu} className="md:hidden focus:outline-none">
-            {open ? <X size={26} /> : <Menu size={26} />}
-          </button>
+          {/* Mobile: theme + menu */}
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="inline-flex items-center justify-center rounded-full p-2 border border-slate-200 dark:border-white/20 bg-white/70 dark:bg-card/70"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
+            <button
+              onClick={toggleMenu}
+              className="p-1 rounded-full border border-slate-200 dark:border-white/20 bg-white/60 dark:bg-card/80"
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -92,7 +148,7 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
               className="fixed inset-0 bg-black z-40"
               onClick={toggleMenu}
             />
@@ -101,68 +157,76 @@ function App() {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.4 }}
-              className="fixed top-0 right-0 h-full w-[40%] sm:w-[20%] bg-[#111]/95 z-50 flex flex-col p-8 text-white space-y-8 shadow-[0_0_40px_rgba(255,255,255,0.1)]"
+              transition={{ duration: 0.25 }}
+              className="fixed top-0 right-0 h-full w-[65%] xs:w-[55%] sm:w-[45%] bg-cardLight dark:bg-card z-50 flex flex-col p-6 text-sm text-slate-800 dark:text-white gap-6 shadow-[0_0_40px_rgba(0,0,0,0.4)]"
             >
-              <button onClick={toggleMenu} className="self-end mb-6">
-                <X size={26} />
-              </button>
-
-              <a href="#" onClick={toggleMenu} className="text-lg hover:text-blue-400">Home</a>
-              <a href="#projects" onClick={toggleMenu} className="text-lg hover:text-blue-400">Projects</a>
-              <a href="#contact" onClick={toggleMenu} className="text-lg hover:text-blue-400">Contact</a>
-
-              <a
-                href="https://www.linkedin.com/in/mugil-m-47597a352/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#0A66C2] 
-                          drop-shadow-[0_0_6px_rgba(10,102,194,0.8)] 
-                          hover:drop-shadow-[0_0_14px_rgba(10,102,194,1)] 
-                          hover:text-[#1a75d1]
-                          transition-all duration-300"
-              >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-semibold">Menu</span>
+                <button onClick={toggleMenu}>
+                  <X size={22} />
+                </button>
+              </div>
 
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=mugil272000@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#EA4335] 
-                          drop-shadow-[0_0_6px_rgba(234,67,53,0.8)] 
-                          hover:drop-shadow-[0_0_14px_rgba(234,67,53,1)] 
-                          hover:text-[#ff6b6b]
-                          transition-all duration-300"
+                href="#"
+                onClick={toggleMenu}
+                className="py-1 hover:text-accent"
               >
-                <SiGmail className="w-5 h-5" />
+                Home
+              </a>
+              <a
+                href="#projects"
+                onClick={toggleMenu}
+                className="py-1 hover:text-accent"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                onClick={toggleMenu}
+                className="py-1 hover:text-accent"
+              >
+                Contact
               </a>
 
-              <a
-                href="https://github.com/mugil027"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white 
-                          drop-shadow-[0_0_6px_rgba(255,255,255,0.5)] 
-                          hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.9)]
-                          hover:text-gray-300
-                          transition-all duration-300"
-              >
-                <FaGithub className="w-5 h-5" />
-              </a>
+              <div className="h-px bg-slate-200/70 dark:bg-white/10 my-2" />
 
-              <a
-                href="https://www.instagram.com/mugil.27/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-500 
-                          drop-shadow-[0_0_6px_rgba(216,70,239,0.7)] 
-                          hover:drop-shadow-[0_0_14px_rgba(216,70,239,1)] 
-                          hover:text-purple-400
-                          transition-all duration-300"
-              >
-                <FaInstagram className="w-5 h-5" />
-              </a>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.linkedin.com/in/mugil-m-47597a352/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0A66C2]"
+                >
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mugil272000@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#EA4335]"
+                >
+                  <SiGmail className="w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://github.com/mugil027"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/mugil.27/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-500"
+                >
+                  <FaInstagram className="w-5 h-5" />
+                </a>
+              </div>
             </motion.div>
           </>
         )}
@@ -173,12 +237,21 @@ function App() {
       <Projects />
 
       {/* ---------- CONTACT SECTION ---------- */}
-      <section id="contact" className="pt-8 pb-20">
+      <section
+        id="contact"
+        className="pt-8 pb-20 bg-gradient-to-b from-transparent to-slate-100/80 dark:to-slate-900/70"
+      >
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            Let’s work together
-          </h2>
-          <p className="text-white/80 max-w-2xl">
+          <div className="inline-flex flex-col gap-2 mb-6">
+            <span className="text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
+              Contact
+            </span>
+            <h2 className="text-3xl md:text-4xl font-semibold">
+              Let’s work together
+            </h2>
+          </div>
+
+          <p className="text-slate-600 dark:text-white/80 max-w-2xl">
             I build data-driven, AI-powered applications end-to-end. Reach out
             for collaborations, roles, or project discussions.
           </p>
@@ -188,10 +261,10 @@ function App() {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=mugil272000@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white text-black font-medium
-                        ring-1 ring-white/30 shadow-[0_0_20px_rgba(255,255,255,0.4)]
-                        hover:shadow-[0_0_40px_rgba(255,255,255,0.8)]
-                        transition-all duration-500 ease-out"
+              className="flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-medium
+                        ring-1 ring-black/10 dark:ring-white/20 shadow-md
+                        hover:shadow-lg hover:-translate-y-[1px]
+                        transition-all duration-300"
             >
               <SiGmail className="w-5 h-5 text-[#EA4335]" />
               Email Me
@@ -201,10 +274,11 @@ function App() {
               href="https://github.com/mugil027"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2 rounded-lg bg-[#0d1117] text-white font-medium
-                        ring-1 ring-white/10 shadow-[0_0_15px_rgba(0,0,0,0.6)]
-                        hover:shadow-[0_0_35px_rgba(255,255,255,0.8)]
-                        transition-all duration-500 ease-out"
+              className="flex items-center gap-2 px-5 py-2 rounded-full bg-cardLight text-slate-900 font-medium
+                        ring-1 ring-slate-200 shadow-sm
+                        hover:shadow-md hover:-translate-y-[1px]
+                        dark:bg-card dark:text-white dark:ring-white/10
+                        transition-all duration-300"
             >
               <FaGithub className="w-5 h-5" />
               GitHub
@@ -214,11 +288,10 @@ function App() {
               href="https://www.linkedin.com/in/mugil-m-47597a352/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 rounded-lg bg-[#0A66C2] text-white font-medium 
-                        shadow-[0_0_20px_rgba(10,102,194,0.8)] 
-                        ring-1 ring-[#0A66C2]/70 
-                        hover:shadow-[0_0_50px_rgba(10,102,194,1)] 
-                        transition-all duration-500 ease-out"
+              className="px-5 py-2 rounded-full bg-[#0A66C2] text-white font-medium 
+                        shadow-md ring-1 ring-[#0A66C2]/70 
+                        hover:shadow-lg hover:-translate-y-[1px]
+                        transition-all duration-300"
             >
               LinkedIn
             </a>
@@ -227,12 +300,12 @@ function App() {
               href="https://www.instagram.com/mugil.27/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group"
+              className="group inline-flex items-center justify-center rounded-full p-2 border border-pink-400/60 bg-pink-50/40 dark:bg-pink-500/10"
             >
               <FaInstagram
-                className="w-10 h-10 text-pink-600 drop-shadow-[0_0_8px_rgba(236,72,153,0.7)] 
-                          group-hover:drop-shadow-[0_0_50px_rgba(236,72,153,1)] 
-                          group-hover:text-pink-400 transition-all duration-500"
+                className="w-6 h-6 text-pink-600 
+                          group-hover:scale-110 
+                          transition-transform duration-300"
               />
             </a>
           </div>

@@ -6,12 +6,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
-  background: #0b0b0d;
-  color: white;
+  margin: 0;
+  padding: 0;
 }
 
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
@@ -20,6 +23,7 @@ html {
   background: #ffffff22;
 }
 
+/* Optional: keep your orb fade keyframe if you ever reuse it */
 @keyframes orbFadeIn {
   from {
     opacity: 0;
@@ -27,7 +31,7 @@ html {
     filter: brightness(0.5);
   }
   to {
-    opacity: 0.6;          /* 👈 soft ring glow */
+    opacity: 0.6;
     transform: scale(1);
     filter: brightness(1);
   }

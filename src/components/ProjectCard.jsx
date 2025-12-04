@@ -9,19 +9,18 @@ import "swiper/css/navigation";
 const ProjectCard = ({ project, mirror = false }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showIcon, setShowIcon] = useState(false);
-  const vidRef = useRef(null);
   const [showControls, setShowControls] = useState(false);
+  const vidRef = useRef(null);
 
   useEffect(() => {
     let hideTimer;
     if (showControls) {
-      hideTimer = setTimeout(() => setShowControls(false), 1500); // hide after 2.5s
+      hideTimer = setTimeout(() => setShowControls(false), 1500);
     }
     return () => clearTimeout(hideTimer);
   }, [showControls]);
 
-
-  // 🔹 Preload video for smoother playback
+  // Preload video
   useEffect(() => {
     if (project.video) {
       const preload = document.createElement("video");
@@ -30,7 +29,6 @@ const ProjectCard = ({ project, mirror = false }) => {
     }
   }, [project.video]);
 
-  // 🔹 Toggle play/pause
   const handleToggle = () => {
     const v = vidRef.current;
     if (!v) return;
@@ -44,22 +42,21 @@ const ProjectCard = ({ project, mirror = false }) => {
       setIsPlaying(true);
     }
 
-    // 👇 Brief play/pause icon animation
     setShowIcon(true);
     setTimeout(() => setShowIcon(false), 800);
   };
 
   return (
     <motion.article
-      className={`flex flex-col lg:flex-row items-center justify-center py-20 border-b border-white/20 gap-12 ${
+      className={`flex flex-col lg:flex-row items-center justify-center py-16 border-b border-slate-200/60 dark:border-white/10 gap-12 ${
         mirror ? "lg:flex-row-reverse" : ""
       }`}
-      initial={{ opacity: 0, y: 80 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      {/* ---------- MEDIA SECTION ---------- */}
+      {/* MEDIA */}
       <div className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%]">
         {project.images ? (
           <Swiper
@@ -70,7 +67,7 @@ const ProjectCard = ({ project, mirror = false }) => {
             pagination={{ clickable: true }}
             navigation
             loop
-            className="w-[90%] max-w-[700px] rounded-2xl"
+            className="w-[90%] max-w-[700px] rounded-2xl shadow-lg"
           >
             {project.images.map((img, i) => (
               <SwiperSlide key={i}>
@@ -83,19 +80,15 @@ const ProjectCard = ({ project, mirror = false }) => {
             ))}
           </Swiper>
         ) : project.video ? (
-          <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-[#1b1b1b]/70 rounded-[25px] shadow-[0_0_40px_rgba(255,255,255,0.15)] ring-1 ring-white/10 p-[4px] md:p-[6px] aspect-video">
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-cardLight/90 dark:bg-[#1b1b1b]/80 rounded-[24px] shadow-[0_18px_45px_rgba(15,23,42,0.45)] ring-1 ring-slate-200/80 dark:ring-white/10 p-[4px] md:p-[6px] aspect-video">
             <video
               ref={vidRef}
               src={project.video}
               poster={project.cover}
               preload="auto"
-              className={`w-full aspect-video max-h-[720px] object-contain md:object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.06] 
-                ${isPlaying ? "opacity-100" : "opacity-100"} 
+              className={`w-full aspect-video max-h-[720px] object-contain md:object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.02]
                 ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
               playsInline
-              webkit-playsinline="true"
-              x5-playsinline="true"
-              x-webkit-airplay="allow"
               controls={showControls}
               controlsList="nodownload noremoteplayback"
               onClick={handleToggle}
@@ -104,70 +97,60 @@ const ProjectCard = ({ project, mirror = false }) => {
               onMouseLeave={() => setShowControls(false)}
             />
 
-            
-
-            {/* 🔘 Play / Pause Icon */}
             {showIcon && (
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    animate={{
-                    opacity: [0, 1, 1, 0],
-                    scale: [0.8, 1, 1.1, 1],
-                    filter: [
-                        "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                        "drop-shadow(0 0 10px rgba(0, 81, 211, 0.92))",
-                        "drop-shadow(0 0 18px rgba(125,211,252,0.8))",
-                        "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                    ],
-                    }}
-                    transition={{ duration: 0.9, ease: "easeInOut" }}
-                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                >
-                    {isPlaying ? (
-                    // ⏸️ Pause icon (black center, glowing edge)
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-20 h-20 text-black"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                    </svg>
-                    ) : (
-                    // ▶️ Play icon (black center, glowing edge)
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-20 h-20 text-black"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                    )}
-                </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={{
+                  opacity: [0, 1, 1, 0],
+                  scale: [0.8, 1, 1.1, 1],
+                  filter: [
+                    "drop-shadow(0 0 0px rgba(0,0,0,0))",
+                    "drop-shadow(0 0 10px rgba(0, 81, 211, 0.92))",
+                    "drop-shadow(0 0 18px rgba(125,211,252,0.8))",
+                    "drop-shadow(0 0 0px rgba(0,0,0,0))",
+                  ],
+                }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+              >
+                {isPlaying ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-16 h-16 text-black"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-16 h-16 text-black"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 )}
+              </motion.div>
+            )}
 
-
-
-            {/* Caption */}
             <p
               onClick={handleToggle}
-              className="mt-1 text-sm text-[#00B4DB]/90 font-normal italic opacity-80 hover:opacity-100 transition cursor-pointer select-none"
-              
+              className="mt-1 text-xs sm:text-sm text-sky-500/90 font-normal italic opacity-80 hover:opacity-100 transition cursor-pointer select-none"
             >
               🎬 Tap to Play / Pause
             </p>
-
           </div>
-
-
         ) : null}
       </div>
 
-      {/* ---------- TEXT SECTION ---------- */}
+      {/* TEXT */}
       <div className="max-w-[480px] text-center lg:text-left">
-        <h3 className="text-3xl md:text-4xl font-semibold">{project.title}</h3>
-        <p className="mt-4 text-white/80 text-justify leading-[1.8] tracking-[0.02em]">
+        <h3 className="text-2xl md:text-3xl font-semibold">
+          {project.title}
+        </h3>
+        <p className="mt-4 text-sm md:text-base text-slate-600 dark:text-white/80 text-justify leading-[1.8] tracking-[0.01em]">
           {project.description}
         </p>
 
@@ -175,7 +158,7 @@ const ProjectCard = ({ project, mirror = false }) => {
           {project.tech.map((t) => (
             <li
               key={t}
-              className="px-3 py-1 rounded-full bg-white/5 text-white/80 text-sm ring-1 ring-white/10"
+              className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs md:text-sm ring-1 ring-slate-200 dark:bg-white/5 dark:text-white/80 dark:ring-white/10"
             >
               {t}
             </li>
@@ -188,7 +171,7 @@ const ProjectCard = ({ project, mirror = false }) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium"
+              className="px-4 py-2 rounded-full bg-black text-white text-xs md:text-sm font-medium shadow-md hover:shadow-lg hover:-translate-y-[1px] transition-all"
             >
               View Code
             </a>
@@ -198,7 +181,7 @@ const ProjectCard = ({ project, mirror = false }) => {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-white text-black text-sm font-medium"
+              className="px-4 py-2 rounded-full bg-white/80 text-slate-900 text-xs md:text-sm font-medium ring-1 ring-slate-200 shadow-sm hover:shadow-md hover:-translate-y-[1px] dark:bg-white/10 dark:text-white dark:ring-white/20 transition-all"
             >
               Live Demo
             </a>
