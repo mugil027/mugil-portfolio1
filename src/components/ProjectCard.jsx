@@ -59,7 +59,7 @@ const ProjectCard = ({ project, mirror = false }) => {
       {/* MEDIA */}
       {/* MEDIA SECTION WITH SCROLL ANIMATION */}
       <motion.div
-        className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%]"
+        className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%] overflow-x-hidden"
         initial={{ opacity: 0, x: mirror ? 80 : -80 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}

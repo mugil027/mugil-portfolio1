@@ -33,7 +33,7 @@ function App() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
-    <main className="font-sans min-h-screen bg-bgLight text-slate-900 dark:bg-bg dark:text-white transition-colors duration-500">
+    <main className="font-sans min-h-screen bg-bgLight text-slate-900 dark:bg-bg dark:text-white transition-colors duration-500 overflow-x-hidden">
       {/* ---------- NAVBAR ---------- */}
       <nav className="fixed top-0 left-0 w-full z-50 border-b border-slate-200/70 dark:border-white/10 bg-cardLight/80 dark:bg-bg/70 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
