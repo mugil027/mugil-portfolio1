@@ -18,12 +18,13 @@ const Hero = () => {
             Portfolio · Data Engineering · AI
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light md:font-extralight leading-tight tracking-tight">
             Welcome To{" "}
-            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               My Portfolio
             </span>
           </h1>
+
 
           <p className="mt-5 text-base md:text-lg text-slate-600 dark:text-gray-300 max-w-xl md:max-w-2xl">
             An Aspiring Data Engineer leveraging AI and analytics to solve

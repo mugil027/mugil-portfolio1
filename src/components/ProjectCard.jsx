@@ -57,7 +57,14 @@ const ProjectCard = ({ project, mirror = false }) => {
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       {/* MEDIA */}
-      <div className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%]">
+      {/* MEDIA SECTION WITH SCROLL ANIMATION */}
+      <motion.div
+        className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%]"
+        initial={{ opacity: 0, x: mirror ? 80 : -80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
         {project.images ? (
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
@@ -81,6 +88,7 @@ const ProjectCard = ({ project, mirror = false }) => {
           </Swiper>
         ) : project.video ? (
           <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-cardLight/90 dark:bg-[#1b1b1b]/80 rounded-[24px] shadow-[0_18px_45px_rgba(15,23,42,0.45)] ring-1 ring-slate-200/80 dark:ring-white/10 p-[4px] md:p-[6px] aspect-video">
+
             <video
               ref={vidRef}
               src={project.video}
@@ -143,7 +151,8 @@ const ProjectCard = ({ project, mirror = false }) => {
             </p>
           </div>
         ) : null}
-      </div>
+      </motion.div>
+
 
       {/* TEXT */}
       <div className="max-w-[480px] text-center lg:text-left">
