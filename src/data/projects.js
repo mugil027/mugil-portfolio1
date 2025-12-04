@@ -7,7 +7,7 @@ export const projects = [
       "I’m Mugil, the founder and creator of Socionn. I built this platform to unify creators from Instagram, YouTube, GitHub, LinkedIn, and all other social platform into one place, giving the world a single destination to discover their full digital identity",
     tech: ["Python", "Airflow", "DAG", "AWS S3", "Snowflake", "dbt", "Docker", "Power BI"],
     video: "/videos/SocionnP.mp4", // 👈 path to your project demo video
-    cover: "/images/cover.png",
+    cover: "/images/cover3.png",
     github: "",
     demo: "https://www.socionn.com",
   },

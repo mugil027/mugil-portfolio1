@@ -87,9 +87,16 @@ const Hero = () => {
                   Aspiring Data Engineer
                 </p>
 
-                <p className="text-sm font-medium tracking-wide text-indigo-600 dark:text-indigo-400">
+                <p className="text-[16px] font-semibold tracking-wide
+                    bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600
+                    bg-clip-text text-transparent
+                    drop-shadow-[0_0_4px_rgba(0,0,0,0.35)]
+                    dark:drop-shadow-[0_0_6px_rgba(0,0,0,0.55)]
+                ">
                   Founder of Socionn
                 </p>
+
+
               </div>
 
               {/* Line */}
