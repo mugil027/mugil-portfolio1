@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import mugilPhoto from "../assets/mugil.jpeg";
+import mugilPhoto from "../assets/pp.png";
 
 const Hero = () => {
   return (
