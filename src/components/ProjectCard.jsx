@@ -143,12 +143,17 @@ const ProjectCard = ({ project, mirror = false }) => {
               </motion.div>
             )}
 
-            <p
+          <p
               onClick={handleToggle}
-              className="mt-5 text-xm md:text-xm text-[#29C5FF] font-semibold tracking-wide italic opacity-95 
-                        drop-shadow-[0_0_12px_rgba(41,197,255,0.55)] hover:opacity-100 transition cursor-pointer select-none"
+              className="mt-1 text-xs sm:text-sm font-medium italic select-none cursor-pointer
+                        bg-gradient-to-r from-[#5EC6F8] via-[#29B6F6] to-[#5EC6F8]
+                        bg-clip-text text-transparent
+                        opacity-85 hover:opacity-100
+                        tracking-wide
+                        drop-shadow-[0_0_6px_rgba(41,182,246,0.45)]
+                        transition-all duration-300 ease-out"
             >
-              🎬 Tap Here to Play / Pause the Video
+              🎬 Tap Here to Play / Pause
             </p>
 
           </div>
