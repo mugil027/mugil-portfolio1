@@ -145,7 +145,7 @@ const ProjectCard = ({ project, mirror = false }) => {
 
             <p
               onClick={handleToggle}
-              className="mt-5 text-xl md:text-xl text-[#29C5FF] font-semibold tracking-wide italic opacity-95 
+              className="mt-5 text-xm md:text-xm text-[#29C5FF] font-semibold tracking-wide italic opacity-95 
                         drop-shadow-[0_0_12px_rgba(41,197,255,0.55)] hover:opacity-100 transition cursor-pointer select-none"
             >
               🎬 Tap Here to Play / Pause the Video
