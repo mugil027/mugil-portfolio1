@@ -97,6 +97,21 @@ const Hero = () => {
                   Founder of Socionn
                 </p>
 
+                <p className="mt-2 flex items-center justify-center md:justify-end gap-4 text-[11px] md:text-xs text-gray-400 opacity-70">
+                  <span className="flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M2 4h20v16H2V4zm10 9L3.5 6.5h17L12 13z" />
+                    </svg>
+                    mugilwork27@gmail.com
+                  </span>
+
+                  <span className="flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6.6 10.8a15.4 15.4 0 006.6 6.6l2.2-2.2a1 1 0 011-.25c1.1.36 2.3.56 3.6.56a1 1 0 011 1V21a1 1 0 01-1 1C9.4 22 2 14.6 2 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.5.6 3.6a1 1 0 01-.25 1l-2.25 2.2z"/>
+                    </svg>
+                    +91 9880451553
+                  </span>
+                </p>
 
               </div>
 
