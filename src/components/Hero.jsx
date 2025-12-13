@@ -97,7 +97,10 @@ const Hero = () => {
                   Founder of Socionn
                 </p>
 
-                <p className="mt-2 flex items-center justify-center md:justify-end gap-4 text-[11px] md:text-xs text-gray-400 opacity-70">
+                <p className="mt-2 flex flex-col items-center gap-1
+                  md:flex-row md:justify-end md:gap-4
+                  text-[11px] md:text-xs text-gray-400 opacity-70">
+
                   <span className="flex items-center gap-1">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M2 4h20v16H2V4zm10 9L3.5 6.5h17L12 13z" />
