@@ -48,148 +48,185 @@ const ProjectCard = ({ project, mirror = false }) => {
 
   return (
     <motion.article
-      className={`flex flex-col lg:flex-row items-center justify-center py-16 border-b border-slate-200/60 dark:border-white/10 gap-12 ${
+      className={`relative flex flex-col lg:flex-row items-center justify-center py-20 gap-14 lg:gap-16 ${
         mirror ? "lg:flex-row-reverse" : ""
       }`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {/* MEDIA */}
-      {/* MEDIA SECTION WITH SCROLL ANIMATION */}
+      {/* Elegant separator line */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-stone-300/50 dark:via-stone-700/30 to-transparent" />
+
+      {/* MEDIA SECTION */}
       <motion.div
-        className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%] overflow-x-hidden"
+        className="flex flex-col items-center justify-center w-full lg:w-[50%] xl:w-[55%]"
         initial={{ opacity: 0, x: mirror ? 80 : -80 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         {project.images ? (
-          <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
-            slidesPerView={1}
-            spaceBetween={20}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            navigation
-            loop
-            className="w-[90%] max-w-[700px] rounded-2xl shadow-lg"
-          >
-            {project.images.map((img, i) => (
-              <SwiperSlide key={i}>
-                <img
-                  src={img}
-                  alt={`${project.title}-${i}`}
-                  className="w-[90%] h-auto max-h-[550px] object-contain bg-black rounded-2xl mx-auto"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        ) : project.video ? (
-          <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px] mx-auto bg-cardLight/90 dark:bg-[#1b1b1b]/80 rounded-[24px] shadow-[0_18px_45px_rgba(15,23,42,0.45)] ring-1 ring-slate-200/80 dark:ring-white/10 p-[4px] md:p-[6px] aspect-video">
-
-            <video
-              ref={vidRef}
-              src={project.video}
-              poster={project.cover}
-              preload="auto"
-              className={`w-full aspect-video max-h-[720px] object-contain md:object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.02]
-                ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
-              playsInline
-              controls={showControls}
-              controlsList="nodownload noremoteplayback"
-              onClick={handleToggle}
-              onMouseMove={() => setShowControls(true)}
-              onTouchStart={() => setShowControls(true)}
-              onMouseLeave={() => setShowControls(false)}
-            />
-
-            {showIcon && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.6 }}
-                animate={{
-                  opacity: [0, 1, 1, 0],
-                  scale: [0.8, 1, 1.1, 1],
-                  filter: [
-                    "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                    "drop-shadow(0 0 10px rgba(0, 81, 211, 0.92))",
-                    "drop-shadow(0 0 18px rgba(125,211,252,0.8))",
-                    "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                  ],
-                }}
-                transition={{ duration: 0.9, ease: "easeInOut" }}
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-              >
-                {isPlaying ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-16 h-16 text-black"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-16 h-16 text-black"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                )}
-              </motion.div>
-            )}
-
-          <p
-              onClick={handleToggle}
-              className="mt-1 text-xs sm:text-sm font-medium italic select-none cursor-pointer
-                        bg-gradient-to-r from-[#5EC6F8] via-[#29B6F6] to-[#5EC6F8]
-                        bg-clip-text text-transparent
-                        opacity-85 hover:opacity-100
-                        tracking-wide
-                        drop-shadow-[0_0_6px_rgba(41,182,246,0.45)]
-                        transition-all duration-300 ease-out"
+          <div className="relative w-[90%] max-w-[700px]">
+            {/* Premium glow behind swiper */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-amber-200/20 via-transparent to-amber-300/10 dark:from-amber-500/10 dark:to-amber-600/5 blur-2xl rounded-3xl" />
+            
+            <Swiper
+              modules={[Autoplay, Pagination, Navigation]}
+              slidesPerView={1}
+              spaceBetween={20}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              navigation
+              loop
+              className="relative rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] ring-1 ring-stone-200/50 dark:ring-stone-800/50"
             >
-              🎬 Tap Here to Play / Pause
-            </p>
+              {project.images.map((img, i) => (
+                <SwiperSlide key={i}>
+                  <img
+                    src={img}
+                    alt={`${project.title}-${i}`}
+                    className="w-[90%] h-auto max-h-[550px] object-contain bg-stone-900 rounded-2xl mx-auto"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        ) : project.video ? (
+          <div className="relative flex flex-col items-center justify-center w-full max-w-[700px] mx-auto px-4">
+            {/* Premium glow */}
+            <div className="absolute -inset-6 bg-gradient-to-br from-amber-200/20 via-transparent to-amber-300/10 dark:from-amber-500/10 dark:to-amber-600/5 blur-3xl rounded-[32px]" />
+            
+            <div className="relative bg-white/95 dark:bg-[#141414]/95 rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.5)] ring-1 ring-stone-200/60 dark:ring-stone-800/50 p-[4px] md:p-[6px] w-full">
 
+              <video
+                ref={vidRef}
+                src={project.video}
+                poster={project.cover}
+                preload="auto"
+                className={`w-full aspect-video max-h-[500px] object-contain rounded-[18px] transition-all duration-500 hover:scale-[1.01]
+                  ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
+                playsInline
+                controls={showControls}
+                controlsList="nodownload noremoteplayback"
+                onClick={handleToggle}
+                onMouseMove={() => setShowControls(true)}
+                onTouchStart={() => setShowControls(true)}
+                onMouseLeave={() => setShowControls(false)}
+              />
+
+              {showIcon && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  animate={{
+                    opacity: [0, 1, 1, 0],
+                    scale: [0.8, 1, 1.1, 1],
+                    filter: [
+                      "drop-shadow(0 0 0px rgba(0,0,0,0))",
+                      "drop-shadow(0 0 15px rgba(212, 168, 40, 0.9))",
+                      "drop-shadow(0 0 25px rgba(249, 212, 75, 0.7))",
+                      "drop-shadow(0 0 0px rgba(0,0,0,0))",
+                    ],
+                  }}
+                  transition={{ duration: 0.9, ease: "easeInOut" }}
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                >
+                  {isPlaying ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-16 h-16 text-amber-500"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-16 h-16 text-amber-500"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  )}
+                </motion.div>
+              )}
+
+              <p
+                onClick={handleToggle}
+                className="mt-2 text-xs sm:text-sm font-body font-medium italic select-none cursor-pointer
+                          bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600
+                          bg-clip-text text-transparent
+                          opacity-80 hover:opacity-100
+                          tracking-wide
+                          transition-all duration-300 ease-out text-center"
+              >
+                🎬 Tap to Play / Pause
+              </p>
+
+            </div>
           </div>
         ) : null}
       </motion.div>
 
-
-      {/* TEXT */}
-      <div className="max-w-[480px] text-center lg:text-left">
-        <h3 className="text-2xl md:text-3xl font-semibold">
+      {/* TEXT SECTION */}
+      <div className="max-w-[500px] text-center lg:text-left">
+        <motion.h3 
+          className="font-heading text-2xl md:text-3xl font-semibold text-stone-900 dark:text-white tracking-tight"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           {project.title}
-        </h3>
-        <p className="mt-4 text-sm md:text-base text-slate-600 dark:text-white/80 text-justify leading-[1.8] tracking-[0.01em]">
+        </motion.h3>
+        
+        <motion.p 
+          className="font-body mt-5 text-sm md:text-[15px] text-stone-600 dark:text-stone-300 text-justify leading-[1.9] tracking-[0.01em]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
           {project.description}
-        </p>
+        </motion.p>
 
-        <ul className="flex flex-wrap gap-2 mt-5 justify-center lg:justify-start">
+        <motion.ul 
+          className="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
           {project.tech.map((t) => (
             <li
               key={t}
-              className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs md:text-sm ring-1 ring-slate-200 dark:bg-white/5 dark:text-white/80 dark:ring-white/10"
+              className="font-body px-3.5 py-1.5 rounded-full bg-stone-100/80 text-stone-700 text-xs md:text-sm ring-1 ring-stone-200/80 dark:bg-stone-800/50 dark:text-stone-300 dark:ring-stone-700/50 transition-all duration-300 hover:bg-amber-50 hover:ring-amber-300/50 hover:text-amber-700 dark:hover:bg-amber-900/20 dark:hover:text-amber-400"
             >
               {t}
             </li>
           ))}
-        </ul>
+        </motion.ul>
 
-        <div className="mt-6 flex gap-3 flex-wrap justify-center lg:justify-start">
+        <motion.div 
+          className="mt-8 flex gap-3 flex-wrap justify-center lg:justify-start"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-full bg-black text-white text-xs md:text-sm font-medium shadow-md hover:shadow-lg hover:-translate-y-[1px] transition-all"
+              className="group relative px-5 py-2.5 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 font-heading text-xs md:text-sm font-medium tracking-wide shadow-lg shadow-stone-900/15 dark:shadow-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
             >
-              View Code
+              <span className="relative z-10">View Code</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="absolute inset-0 z-10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Code</span>
             </a>
           )}
           {project.demo && (
@@ -197,12 +234,12 @@ const ProjectCard = ({ project, mirror = false }) => {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-full bg-white/80 text-slate-900 text-xs md:text-sm font-medium ring-1 ring-slate-200 shadow-sm hover:shadow-md hover:-translate-y-[1px] dark:bg-white/10 dark:text-white dark:ring-white/20 transition-all"
+              className="px-5 py-2.5 rounded-full bg-white/90 text-stone-800 font-heading text-xs md:text-sm font-medium tracking-wide ring-1 ring-stone-200/80 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:ring-amber-400/50 dark:bg-stone-800/80 dark:text-white dark:ring-stone-700/50 dark:hover:ring-amber-500/30 transition-all duration-300"
             >
               Live Demo
             </a>
           )}
-        </div>
+        </motion.div>
       </div>
     </motion.article>
   );
