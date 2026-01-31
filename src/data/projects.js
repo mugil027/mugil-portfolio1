@@ -1,10 +1,32 @@
 export const projects = [
 
   {
-    id: 5,
-    title: "Socionn",
+    id: 0,
+    title: "Socionn - The Future of Social Connection",
     description:
-      "I'm Mugil, the founder and creator of Socionn. I built this platform to unify creators from Instagram, YouTube, GitHub, LinkedIn, and all other social platform into one place, giving the world a single destination to discover their full digital identity",
+      "A full-scale social media app I built from scratch for Android and iOS, with functionality comparable to Instagram. As the sole architect and engineer, I designed and implemented every layer: a Reels system with highly optimized video transcoding pipelines, feed ranking with efficient pagination, real-time interactions via WebSockets, secure authentication and APIs, complete backend services with database schema design, indexing, and performance tuning, media storage with CDN-style delivery, and production-grade deployment with monitoring. No templates, no boilerplate, no external team — every service, model, API, and optimization was engineered by me from the ground up.",
+    tech: ["Flutter", "Kotlin", "Swift", "PostgreSQL", "FFmpeg", "CDN", "R2 Cloudflare"],
+    images: [
+      "/images/1.png",
+      "/images/2.png",
+      "/images/3.png",
+      "/images/6.png",
+      "/images/7.png",
+      "/images/4.png",
+    ],
+    github: "",
+    demo: "",
+    appLinks: {
+      android: "https://play.google.com/store/apps/details?id=com.socionn.app",
+      ios: "https://apps.apple.com/app/6757596007"
+    }
+  },
+
+  {
+    id: 5,
+    title: "Socionn — Platform Vision",
+    description:
+      "I'm Mugil, the founder and creator of Socionn. I built this platform to unify creators from Instagram, YouTube, GitHub, LinkedIn, and all other social platforms into one place, giving the world a single destination to discover their full digital identity.",
     tech: ["Python", "Airflow", "DAG", "AWS S3", "Snowflake", "dbt", "Docker", "Power BI"],
     video: "/videos/SocionnP.mp4",
     cover: "/images/cover3.png",
@@ -12,12 +34,11 @@ export const projects = [
     demo: "https://www.socionn.com",
   },
 
-
   {
     id: 4,
     title: "E-Commerce Analytics System (Automated)",
     description:
-      "Engineered a production-style ETL pipeline using Airflow to orchestrate ingestion from AWS S3 into Snowflake and automated transformation with dbt. Built Python-based data generators, Snowflake staging layers, and a curated fact model for end-to-end data warehousing. Containerized the pipeline with Docker and implemented S3 sensors, Snowflake COPY commands, and dbt workflows for reliable, fully automated daily data refresh",
+      "Engineered a production-style ETL pipeline using Airflow to orchestrate ingestion from AWS S3 into Snowflake and automated transformation with dbt. Built Python-based data generators, Snowflake staging layers, and a curated fact model for end-to-end data warehousing. Containerized the pipeline with Docker and implemented S3 sensors, Snowflake COPY commands, and dbt workflows for reliable, fully automated daily data refresh.",
     tech: ["Python", "Airflow", "DAG", "AWS S3", "Snowflake", "dbt", "Docker", "Power BI"],
     video: "/videos/Ecom_videos.mp4",
     cover: "/images/Ecom_cover.png",
@@ -54,6 +75,7 @@ export const projects = [
     github: "https://github.com/mugil027/land-deed-scrutinizer-MobileAPP",
     demo: "",
   },
+
   {
     id: 2,
     title: "Expense Tracker",
@@ -65,6 +87,7 @@ export const projects = [
     github: "https://github.com/mugil027/ExpenseTracker",
     demo: "https://expensetracker-1-hjsa.onrender.com/",
   },
+
   {
     id: 6,
     title: "Bird Classifier (CNN)",
