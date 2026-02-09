@@ -28,7 +28,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Data Engineer · Backend Architect · Builder
+            Full Stack Engineer · Backend Architect · Builder
           </motion.p>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-tight">
@@ -49,7 +49,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Data Engineer & Backend Engineer who designed, implemented, optimized, 
+            Full Stack Engineer & Data Engineer who designed, implemented, optimized, 
             and deployed an entire social media mobile application from scratch — 
             every feature, every layer, every system.
           </motion.p>
@@ -119,7 +119,7 @@ const Hero = () => {
                 </h2>
 
                 <p className="font-body text-[12px] uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
-                  Data & Backend Engineer
+                  Full Stack Engineer
                 </p>
 
                 <p className="font-display text-[22px] font-semibold tracking-wide bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">

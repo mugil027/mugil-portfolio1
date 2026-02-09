@@ -105,7 +105,7 @@ const ProjectCard = ({ project, mirror = false }) => {
                 src={project.video}
                 poster={project.cover}
                 preload="auto"
-                className={`w-full aspect-video max-h-[500px] object-contain rounded-[18px] transition-all duration-500 hover:scale-[1.01]
+                className={`w-full aspect-video object-cover rounded-[18px] transition-all duration-500 hover:scale-[1.01]
                   ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
                 playsInline
                 controls={showControls}
