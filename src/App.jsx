@@ -13,8 +13,7 @@ function App() {
     if (typeof window === "undefined") return "dark";
     const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark") return stored;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return prefersDark ? "dark" : "light";
+    return "dark";
   });
 
   const [open, setOpen] = useState(false);
@@ -63,6 +62,10 @@ function App() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8 text-sm">
+            <a href="/Mugil_SE7.pdf" target="_blank" rel="noopener noreferrer" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
+              Resume
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:w-full transition-all duration-300" />
+            </a>
             <a href="#projects" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
               Projects
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:w-full transition-all duration-300" />
@@ -190,6 +193,15 @@ function App() {
                   className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
                 >
                   Home
+                </a>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={toggleMenu}
+                  className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                >
+                  Resume
                 </a>
                 <a
                   href="#projects"
