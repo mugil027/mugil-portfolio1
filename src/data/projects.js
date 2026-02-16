@@ -1,6 +1,18 @@
 export const projects = [
 
   {
+    id: 10,
+    title: "AI-Powered Email Client — Prompt-Driven UI",
+    description:
+      "A fully functional AI-powered email client where the entire UI is controlled through natural language prompts. Instead of clicking buttons, users interact with an intelligent assistant panel that understands commands like 'compose a sick leave email to my manager' or 'show me unread emails from this week' — and the interface responds instantly. Built with a real Gmail integration for sending, receiving, and managing emails, threaded conversations, smart filtering, and a compose system — all orchestrated by an AI assistant that acts as the command center. The app features a modern, premium UI with dark mode, smooth animations, and a seamless experience that reimagines how people interact with email.",
+    tech: ["Next.js", "TypeScript", "AI/LLM", "Gmail API", "Tailwind CSS", "WebSockets"],
+    video: "/videos/AIEmailClient.mp4",
+    cover: "/images/AIEmailCover.png",
+    github: "",
+    demo: "https://mailappfrontend.vercel.app/",
+  },
+
+  {
     id: 7,
     title: "Akira Pilates – Personalized Studio Website",
     description:
