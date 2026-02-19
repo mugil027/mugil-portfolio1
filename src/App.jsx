@@ -62,7 +62,7 @@ function App() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8 text-sm">
-            <a href="/Mugil_SE7.pdf" target="_blank" rel="noopener noreferrer" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
+            <a href="/Mugil_M_FE.pdf" target="_blank" rel="noopener noreferrer" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
               Resume
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:w-full transition-all duration-300" />
             </a>
