@@ -195,7 +195,7 @@ function App() {
                   Home
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/Mugil_M_FE.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={toggleMenu}
