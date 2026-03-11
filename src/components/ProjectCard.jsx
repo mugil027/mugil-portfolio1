@@ -109,7 +109,7 @@ const ProjectCard = ({ project, mirror = false }) => {
                   ${showControls ? "" : "[&::-webkit-media-controls]:opacity-0"}`}
                 playsInline
                 controls={showControls}
-                controlsList="nodownload noremoteplayback"
+                controlsList="noremoteplayback"
                 onClick={handleToggle}
                 onMouseMove={() => setShowControls(true)}
                 onTouchStart={() => setShowControls(true)}
