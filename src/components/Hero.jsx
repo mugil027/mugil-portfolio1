@@ -49,7 +49,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             Full Stack Engineer & Data Engineer who designed, implemented, optimized,
-            and deployed an entire social media mobile application from scratch —
+            and deployed an entire social media mobile application from scratch -
             every feature, every layer, every system.
           </motion.p>
 
@@ -179,7 +179,7 @@ const Hero = () => {
           {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
 
-            {/* Left — Socionn */}
+            {/* Left - Socionn */}
             <motion.div
               className="relative rounded-[24px] bg-white dark:bg-[#0D1B2A]/90 border border-stone-200 dark:border-stone-800/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.4)]"
               initial={{ opacity: 0, x: -20 }}
@@ -194,7 +194,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <h3 className="font-heading text-xl font-bold text-stone-900 dark:text-white">
-                  Socionn — Full-Scale Social Media App
+                  Socionn - Full-Scale Social Media App
                 </h3>
               </div>
 
@@ -234,7 +234,7 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Right — Data Engineering */}
+            {/* Right - Data Engineering */}
             <motion.div
               className="relative rounded-[24px] bg-white dark:bg-[#0D1B2A]/90 border border-stone-200 dark:border-stone-800/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.4)]"
               initial={{ opacity: 0, x: 20 }}
@@ -287,7 +287,7 @@ const Hero = () => {
                   while continuously building, shipping, and scaling real-world engineering products.
                 </p>
                 <p className="font-display text-base font-semibold bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
-                  I don't just "work with data" or "build features" — I own systems, from design to production.
+                  I don't just "work with data" or "build features" - I own systems, from design to production.
                 </p>
               </div>
             </motion.div>
@@ -303,13 +303,13 @@ const Hero = () => {
           >
             <p className="font-body text-lg text-stone-600 dark:text-stone-300 mb-8 max-w-2xl mx-auto">
               If you're looking for someone who can take an idea and turn it into a fully working,
-              scalable product —{" "}
+              scalable product -{" "}
               <span className="font-semibold text-stone-900 dark:text-stone-100">I'm that engineer.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <p className="font-body text-sm text-stone-500 dark:text-stone-400">
-                Check out Socionn — the future of social connection:
+                Check out Socionn - the future of social connection:
               </p>
               <div className="flex gap-3">
                 <a

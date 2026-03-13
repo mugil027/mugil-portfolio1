@@ -7,7 +7,7 @@ const milestones = [
     title: "BSc Computer Science",
     subtitle: "St. Joseph's College, Bengaluru",
     description:
-      "Graduated with Computer Science fundamentals — algorithms, data structures, and software engineering principles that became the foundation of everything built since.",
+      "Graduated with Computer Science fundamentals - algorithms, data structures, and software engineering principles that became the foundation of everything built since.",
     tag: "Education",
     tagClass: "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-800/30",
     nodeGradient: "from-blue-500 to-blue-700",
@@ -18,7 +18,7 @@ const milestones = [
     title: "MSc Big Data Analytics",
     subtitle: "St. Joseph's University, Bengaluru · Real-Time Engineering",
     description:
-      "Joined MSc in Big Data Analytics and immediately started shipping production-grade real-time applications — an AI-powered email client with LLM function calling & Gmail API, and a full-stack Expense Tracker with JWT auth, automated email alerts, and budget analytics.",
+      "Joined MSc in Big Data Analytics and immediately started shipping production-grade real-time applications - an AI-powered email client with LLM function calling & Gmail API, and a full-stack Expense Tracker with JWT auth, automated email alerts, and budget analytics.",
     tag: "Education · Engineering",
     tagClass: "text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/40 border border-purple-200/50 dark:border-purple-800/30",
     nodeGradient: "from-purple-500 to-purple-700",
@@ -40,7 +40,7 @@ const milestones = [
     title: "Founded Socionn",
     subtitle: "Sole Architect · Full-Stack Social Media Platform",
     description:
-      "Founded and solo-engineered Socionn — a production-grade social media platform with full backend, web, and mobile apps. Designed service boundaries across feeds, chat, notifications, media, and auth. Built real-time WebSocket messaging (5K+ concurrent sessions, <50ms latency), async FFmpeg video pipeline (500+ uploads/day, HLS/DASH), 25+ table PostgreSQL schema, multi-layer Redis caching (70% DB load reduction), OAuth2, rate limiting, and zero-downtime Docker CI/CD — supporting 10K+ concurrent users and 100K+ daily API requests at <200ms p95.",
+      "Founded and solo-engineered Socionn - a production-grade social media platform with full backend, web, and mobile apps. Designed service boundaries across feeds, chat, notifications, media, and auth. Built real-time WebSocket messaging (5K+ concurrent sessions, <50ms latency), async FFmpeg video pipeline (500+ uploads/day, HLS/DASH), 25+ table PostgreSQL schema, multi-layer Redis caching (70% DB load reduction), OAuth2, rate limiting, and zero-downtime Docker CI/CD - supporting 10K+ concurrent users and 100K+ daily API requests at <200ms p95.",
     tag: "Founder · Full Stack",
     tagClass: "text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-700/30",
     nodeGradient: "from-blue-500 to-blue-600",
@@ -52,7 +52,7 @@ const milestones = [
     title: "Socionn Launches on Android & iOS",
     subtitle: "Live on Play Store & App Store · Scaling · Full Stack",
     description:
-      "Socionn goes live on both Android (Google Play) and iOS (App Store) — sole-shipped across Flutter, Kotlin, and Swift. Currently scaling the platform, completing MSc in Big Data Analytics, and continuously building AI-integrated full-stack systems.",
+      "Socionn goes live on both Android (Google Play) and iOS (App Store) - sole-shipped across Flutter, Kotlin, and Swift. Currently scaling the platform, completing MSc in Big Data Analytics, and continuously building AI-integrated full-stack systems.",
     tag: "Current · Mobile · Scaling",
     tagClass: "text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 border border-rose-200/50 dark:border-rose-800/30",
     nodeGradient: "from-rose-500 to-rose-700",
@@ -256,17 +256,17 @@ const CareerTimeline = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.25, duration: 0.6 }}
           >
-            From BSc foundations to founding a production platform — every milestone that shaped the engineer I am today.
+            From BSc foundations to founding a production platform - every milestone that shaped the engineer I am today.
           </motion.p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical center line — desktop */}
+          {/* Vertical center line - desktop */}
           <div className="absolute left-1/2 top-0 bottom-0 hidden md:block" style={{ transform: "translateX(-50%)", width: "2px" }}>
             <div className="h-full w-full bg-gradient-to-b from-transparent via-stone-300 dark:via-stone-700 to-transparent" />
           </div>
-          {/* Vertical left line — mobile */}
+          {/* Vertical left line - mobile */}
           <div className="absolute left-5 top-0 bottom-0 md:hidden" style={{ width: "2px" }}>
             <div className="h-full w-full bg-gradient-to-b from-transparent via-stone-300 dark:via-stone-700 to-transparent" />
           </div>

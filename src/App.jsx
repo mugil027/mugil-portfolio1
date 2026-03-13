@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-      {/* Premium custom cursor — desktop only */}
+      {/* Premium custom cursor - desktop only */}
       <CustomCursor />
 
       {/* Scroll progress bar */}
@@ -280,7 +280,7 @@ function App() {
         {/* ---------- MAIN SECTIONS ---------- */}
         <Hero />
 
-        {/* Career timeline — between Hero and Skills */}
+        {/* Career timeline - between Hero and Skills */}
         <CareerTimeline />
 
         {/* Skills arsenal */}

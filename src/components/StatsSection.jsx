@@ -108,7 +108,7 @@ const StatsSection = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.25, duration: 0.6 }}
           >
-            Real numbers from production systems — every metric earned through engineering, not estimation.
+            Real numbers from production systems - every metric earned through engineering, not estimation.
           </motion.p>
         </div>
 

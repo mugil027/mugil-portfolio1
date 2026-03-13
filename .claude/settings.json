@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rn \"—\" /Users/mugil/Desktop/mugil-portfolio1/src --include=\"*.{jsx,tsx,js,ts}\")",
+      "Bash(find /Users/mugil/Desktop/mugil-portfolio1/src -type f \\\\\\( -name \"*.jsx\" -o -name \"*.tsx\" -o -name \"*.js\" -o -name \"*.ts\" \\\\\\) -exec sed -i '' 's/—/-/g' {} +)"
+    ]
+  }
+}

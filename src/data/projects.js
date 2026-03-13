@@ -2,9 +2,9 @@ export const projects = [
 
   {
     id: 10,
-    title: "AI-Powered Email Client — Prompt-Driven UI",
+    title: "AI-Powered Email Client - Prompt-Driven UI",
     description:
-      "A fully functional AI-powered email client where the entire UI is controlled through natural language prompts. Instead of clicking buttons, users interact with an intelligent assistant panel that understands commands like 'compose a sick leave email to my manager' or 'show me unread emails from this week' — and the interface responds instantly. Built with a real Gmail integration for sending, receiving, and managing emails, threaded conversations, smart filtering, and a compose system — all orchestrated by an AI assistant that acts as the command center. The app features a modern, premium UI with dark mode, smooth animations, and a seamless experience that reimagines how people interact with email.",
+      "A fully functional AI-powered email client where the entire UI is controlled through natural language prompts. Instead of clicking buttons, users interact with an intelligent assistant panel that understands commands like 'compose a sick leave email to my manager' or 'show me unread emails from this week' - and the interface responds instantly. Built with a real Gmail integration for sending, receiving, and managing emails, threaded conversations, smart filtering, and a compose system - all orchestrated by an AI assistant that acts as the command center. The app features a modern, premium UI with dark mode, smooth animations, and a seamless experience that reimagines how people interact with email.",
     tech: ["Next.js", "TypeScript", "AI/LLM", "Gmail API", "Tailwind CSS", "WebSockets"],
     video: "/videos/AIEmailClient.mp4",
     cover: "/images/AIEmailCover.png",
@@ -96,9 +96,10 @@ export const projects = [
     id: 11,
     title: "Dynamic Portfolio Dashboard – Real-Time Stock Intelligence",
     description:
-      "A full-stack financial dashboard displaying live stock data for 26 Indian equities across 6 sectors — built with a 4-tier real-time data fallback architecture. Tier 1 scrapes CMP from Yahoo Finance (v8 Chart API) and P/E & EPS from Google Finance via Cheerio. Tier 2 falls back to Yahoo quoteSummary with crumb-token auth. Tier 3 switches to Finnhub's official API when cloud IP blocks prevent scraping. Tier 4 serves hardcoded reference data as a last resort — each field (CMP, P/E, EPS) resolves independently, so the dashboard always shows something. Requests are batched in groups of 5 with a 300ms throttle and cached in-memory (60s TTL) to stay within rate limits. The UI shows per-field source indicators (live vs. mock), sector-level gain/loss groupings, Recharts visualizations, and auto-refreshes every 5 minutes — all API keys hidden server-side.",
+      "A full-stack financial dashboard displaying live stock data for 26 Indian equities across 6 sectors - built with a 4-tier real-time data fallback architecture. Tier 1 scrapes CMP from Yahoo Finance (v8 Chart API) and P/E & EPS from Google Finance via Cheerio. Tier 2 falls back to Yahoo quoteSummary with crumb-token auth. Tier 3 switches to Finnhub's official API when cloud IP blocks prevent scraping. Tier 4 serves hardcoded reference data as a last resort - each field (CMP, P/E, EPS) resolves independently, so the dashboard always shows something. Requests are batched in groups of 5 with a 300ms throttle and cached in-memory (60s TTL) to stay within rate limits. The UI shows per-field source indicators (live vs. mock), sector-level gain/loss groupings, Recharts visualizations, and auto-refreshes every 5 minutes - all API keys hidden server-side.",
     tech: ["Next.js", "Node.js", "TypeScript", "Tailwind CSS", "Recharts", "Yahoo Finance", "Google Finance", "Finnhub", "Cheerio", "Axios", "node-cache"],
     video: "/videos/PortfolioDashboard.mp4",
+    cover: "/images/CoverAI.png",
     github: "https://github.com/mugil027/STOCKPORTFOLIO",
     demo: "https://stockportfolio-eta.vercel.app/",
   },

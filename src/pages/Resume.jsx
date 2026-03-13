@@ -63,13 +63,13 @@ const experience = [
     stack: ["React.js", "Next.js", "FastAPI", "TypeScript", "PostgreSQL", "RESTful APIs", "WebSockets", "Redis", "Docker", "FFmpeg"],
     description: "Sole architect and engineer of a real-time social media platform across web, Android, iOS, backend, and infrastructure. Owned the entire product lifecycle from system design to production operations.",
     bullets: [
-      { bold: "10K+ concurrent users · 100K+ daily API requests · <200ms p95 latency", text: " — Architected an end-to-end distributed platform, designing service boundaries across feeds, chat, notifications, media, and authentication domains." },
-      { bold: "25+ table PostgreSQL schema", text: " — Modeled and optimized for social graph queries and feed generation at scale." },
-      { bold: "70% database load reduction", text: " — Achieved via multi-layer caching (Redis + in-process LRU), enabling 3× traffic spike tolerance." },
-      { bold: "5K+ concurrent WebSocket sessions", text: " — Built real-time messaging system with delivery guarantees and <50ms notification latency." },
-      { bold: "500+ video uploads/day · 60% buffering reduction", text: " — Engineered async video processing pipeline (FFmpeg + HLS/DASH)." },
-      { bold: "99.9% uptime · zero-downtime deployments", text: " — Containerized with Docker and implemented CI/CD pipelines." },
-      { bold: "Zero critical vulnerabilities", text: " — Implemented authentication, OAuth2 flows, rate limiting, and abuse protection — passed full security review." },
+      { bold: "10K+ concurrent users · 100K+ daily API requests · <200ms p95 latency", text: " - Architected an end-to-end distributed platform, designing service boundaries across feeds, chat, notifications, media, and authentication domains." },
+      { bold: "25+ table PostgreSQL schema", text: " - Modeled and optimized for social graph queries and feed generation at scale." },
+      { bold: "70% database load reduction", text: " - Achieved via multi-layer caching (Redis + in-process LRU), enabling 3× traffic spike tolerance." },
+      { bold: "5K+ concurrent WebSocket sessions", text: " - Built real-time messaging system with delivery guarantees and <50ms notification latency." },
+      { bold: "500+ video uploads/day · 60% buffering reduction", text: " - Engineered async video processing pipeline (FFmpeg + HLS/DASH)." },
+      { bold: "99.9% uptime · zero-downtime deployments", text: " - Containerized with Docker and implemented CI/CD pipelines." },
+      { bold: "Zero critical vulnerabilities", text: " - Implemented authentication, OAuth2 flows, rate limiting, and abuse protection - passed full security review." },
     ],
   },
 ];
@@ -81,12 +81,12 @@ const featuredProjects = [
     demo: "https://mailappfrontend.vercel.app/",
     stack: ["Next.js (TypeScript)", "FastAPI", "Gmail API", "OAuth2", "SSE", "Zustand", "OpenAI Function Calling"],
     bullets: [
-      { bold: "Deterministic LLM function-calling pipeline", text: " — enabling natural language → typed UI state transitions." },
-      { bold: "Real-time inbox sync", text: " — using Server-Sent Events, Gmail History API, and resilient polling fallback." },
-      { bold: "RFC-compliant email threading", text: " — MIME parsing and token auto-refresh for long-lived sessions." },
-      { bold: "Finite state machine + action dispatcher", text: " — for single-cycle command execution and idempotent updates." },
-      { bold: "OAuth2 authorization flow", text: " — secure token storage and refresh rotation." },
-      { bold: "Zustand state management", text: " — optimized to prevent redundant renders and race conditions." },
+      { bold: "Deterministic LLM function-calling pipeline", text: " - enabling natural language → typed UI state transitions." },
+      { bold: "Real-time inbox sync", text: " - using Server-Sent Events, Gmail History API, and resilient polling fallback." },
+      { bold: "RFC-compliant email threading", text: " - MIME parsing and token auto-refresh for long-lived sessions." },
+      { bold: "Finite state machine + action dispatcher", text: " - for single-cycle command execution and idempotent updates." },
+      { bold: "OAuth2 authorization flow", text: " - secure token storage and refresh rotation." },
+      { bold: "Zustand state management", text: " - optimized to prevent redundant renders and race conditions." },
     ],
   },
 ];
@@ -615,7 +615,7 @@ const Resume = () => {
                 </span>
               </h2>
               <p className="font-body text-stone-400 max-w-lg mx-auto mb-8">
-                Whether it's a senior engineering role, a technical co-founder position, or a challenging product — I'm ready to own it from day one.
+                Whether it's a senior engineering role, a technical co-founder position, or a challenging product - I'm ready to own it from day one.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a

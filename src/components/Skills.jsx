@@ -179,7 +179,7 @@ const Skills = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.25, duration: 0.6 }}
           >
-            A full-stack toolkit spanning frontend, backend, data engineering, mobile, and AI — built through years of shipping production systems.
+            A full-stack toolkit spanning frontend, backend, data engineering, mobile, and AI - built through years of shipping production systems.
           </motion.p>
         </div>
 
