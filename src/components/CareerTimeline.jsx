@@ -111,7 +111,7 @@ const CardContent = ({ milestone, align }) => (
           {milestone.tag}
         </span>
       </div>
-      <span className={`font-display text-5xl font-light text-stone-300 dark:text-stone-800 block mb-1 ${align === "right" ? "text-right" : "text-left"}`}>
+      <span className={`font-display text-5xl font-light text-blue-300 dark:text-blue-700/70 block mb-1 ${align === "right" ? "text-right" : "text-left"}`}>
         {milestone.year}
       </span>
       <h3
