@@ -21,8 +21,8 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <motion.span 
-            className="inline-block font-body text-[11px] uppercase tracking-[0.4em] text-amber-600/80 dark:text-amber-400/70 mb-4"
+          <motion.span
+            className="inline-block font-body text-[11px] uppercase tracking-[0.4em] text-amber-700 dark:text-amber-400/70 mb-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

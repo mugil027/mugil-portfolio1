@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="relative py-12 border-t border-stone-200/60 dark:border-stone-800/40 bg-[#faf9f6]/90 dark:bg-[#0a0a0a]/90">
+  <footer className="relative py-12 border-t border-stone-200 dark:border-stone-800/40 bg-[#faf9f6] dark:bg-[#0a0a0a]/90">
     {/* Subtle gradient overlay */}
     <div className="absolute inset-0 bg-gradient-to-t from-stone-100/50 to-transparent dark:from-stone-900/30 dark:to-transparent pointer-events-none" />
     

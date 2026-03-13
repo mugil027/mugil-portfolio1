@@ -5,14 +5,32 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        // body: Inter — sharpest UI font, exceptional small-size legibility
+        sans:    ["Inter", "system-ui", "sans-serif"],
+        body:    ["Inter", "system-ui", "sans-serif"],
+        // heading: Plus Jakarta Sans — modern, professional, tight tracking
+        heading: ["Plus Jakarta Sans", "Helvetica Neue", "system-ui", "sans-serif"],
+        // display: Cormorant Garamond — editorial serif for large hero titles only
+        display: ["Cormorant Garamond", "Georgia", "serif"],
       },
       colors: {
-        bg: "#050816",          // dark background
-        card: "#0f172a",        // dark surface
-        bgLight: "#f5f5f7",     // light background
-        cardLight: "#ffffff",   // light surface
-        accent: "#6366f1",      // main accent
+        gold: {
+          300: "#f0cc60",
+          400: "#d9a820",
+          500: "#c09018",
+          600: "#a07812",
+          700: "#826010",
+        },
+      },
+      letterSpacing: {
+        tighter: "-0.04em",
+        tight:   "-0.025em",
+        snug:    "-0.015em",
+        normal:  "-0.011em",
+        wide:     "0.04em",
+        wider:    "0.08em",
+        widest:   "0.16em",
+        caps:     "0.35em",
       },
     },
   },

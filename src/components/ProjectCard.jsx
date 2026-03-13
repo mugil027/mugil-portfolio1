@@ -57,7 +57,7 @@ const ProjectCard = ({ project, mirror = false }) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {/* Elegant separator line */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-stone-300/50 dark:via-stone-700/30 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-stone-300 dark:via-stone-700/30 to-transparent" />
 
       {/* MEDIA SECTION */}
       <motion.div
@@ -80,7 +80,7 @@ const ProjectCard = ({ project, mirror = false }) => {
               pagination={{ clickable: true }}
               navigation
               loop
-              className="relative rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] ring-1 ring-stone-200/50 dark:ring-stone-800/50"
+              className="relative rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] ring-1 ring-stone-200 dark:ring-stone-800/50"
             >
               {project.images.map((img, i) => (
                 <SwiperSlide key={i}>
@@ -98,7 +98,7 @@ const ProjectCard = ({ project, mirror = false }) => {
             {/* Premium glow */}
             <div className="absolute -inset-6 bg-gradient-to-br from-amber-200/20 via-transparent to-amber-300/10 dark:from-amber-500/10 dark:to-amber-600/5 blur-3xl rounded-[32px]" />
             
-            <div className="relative bg-white/95 dark:bg-[#141414]/95 rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.5)] ring-1 ring-stone-200/60 dark:ring-stone-800/50 p-[4px] md:p-[6px] w-full">
+            <div className="relative bg-white dark:bg-[#141414]/95 rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.5)] ring-1 ring-stone-200 dark:ring-stone-800/50 p-[4px] md:p-[6px] w-full">
 
               <video
                 ref={vidRef}
@@ -203,7 +203,7 @@ const ProjectCard = ({ project, mirror = false }) => {
           {project.tech.map((t) => (
             <li
               key={t}
-              className="font-body px-3.5 py-1.5 rounded-full bg-stone-100/80 text-stone-700 text-xs md:text-sm ring-1 ring-stone-200/80 dark:bg-stone-800/50 dark:text-stone-300 dark:ring-stone-700/50 transition-all duration-300 hover:bg-amber-50 hover:ring-amber-300/50 hover:text-amber-700 dark:hover:bg-amber-900/20 dark:hover:text-amber-400"
+              className="font-body px-3.5 py-1.5 rounded-full bg-stone-100 text-stone-700 text-xs md:text-sm ring-1 ring-stone-200 dark:bg-stone-800/50 dark:text-stone-300 dark:ring-stone-700/50 transition-all duration-300 hover:bg-amber-50 hover:ring-amber-300 hover:text-amber-700 dark:hover:bg-amber-900/20 dark:hover:text-amber-400"
             >
               {t}
             </li>
@@ -234,7 +234,7 @@ const ProjectCard = ({ project, mirror = false }) => {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-full bg-white/90 text-stone-800 font-heading text-xs md:text-sm font-medium tracking-wide ring-1 ring-stone-200/80 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:ring-amber-400/50 dark:bg-stone-800/80 dark:text-white dark:ring-stone-700/50 dark:hover:ring-amber-500/30 transition-all duration-300"
+              className="px-5 py-2.5 rounded-full bg-white text-stone-800 font-heading text-xs md:text-sm font-medium tracking-wide ring-1 ring-stone-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:ring-amber-400 dark:bg-stone-800/80 dark:text-white dark:ring-stone-700/50 dark:hover:ring-amber-500/30 transition-all duration-300"
             >
               Live Demo
             </a>

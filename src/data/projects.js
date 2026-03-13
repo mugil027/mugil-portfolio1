@@ -93,6 +93,16 @@ export const projects = [
   },
 
   {
+    id: 11,
+    title: "Dynamic Portfolio Dashboard – Real-Time Stock Intelligence",
+    description:
+      "A full-stack financial dashboard displaying live stock data for 26 Indian equities across 6 sectors — built with a 4-tier real-time data fallback architecture. Tier 1 scrapes CMP from Yahoo Finance (v8 Chart API) and P/E & EPS from Google Finance via Cheerio. Tier 2 falls back to Yahoo quoteSummary with crumb-token auth. Tier 3 switches to Finnhub's official API when cloud IP blocks prevent scraping. Tier 4 serves hardcoded reference data as a last resort — each field (CMP, P/E, EPS) resolves independently, so the dashboard always shows something. Requests are batched in groups of 5 with a 300ms throttle and cached in-memory (60s TTL) to stay within rate limits. The UI shows per-field source indicators (live vs. mock), sector-level gain/loss groupings, Recharts visualizations, and auto-refreshes every 5 minutes — all API keys hidden server-side.",
+    tech: ["Next.js", "Node.js", "TypeScript", "Tailwind CSS", "Recharts", "Yahoo Finance", "Google Finance", "Finnhub", "Cheerio", "Axios", "node-cache"],
+    github: "https://github.com/mugil027/STOCKPORTFOLIO",
+    demo: "https://stockportfolio-eta.vercel.app/",
+  },
+
+  {
     id: 4,
     title: "E-Commerce Analytics System (Automated)",
     description:
