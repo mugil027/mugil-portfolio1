@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 const skillCategories = [
   {
     name: "Languages",
-    color: "amber",
-    bg: "bg-amber-50 dark:bg-amber-950/30",
-    border: "border-amber-200 dark:border-amber-800/40",
-    badge: "bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-700/40",
+    color: "blue",
+    bg: "bg-blue-50 dark:bg-blue-950/30",
+    border: "border-blue-200 dark:border-blue-800/40",
+    badge: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-700/40",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -155,7 +155,7 @@ const Skills = () => {
         {/* Header */}
         <div ref={sectionRef} className="text-center mb-14">
           <motion.p
-            className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-700 dark:text-amber-400 mb-4"
+            className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-700 dark:text-blue-400 mb-4"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -169,7 +169,7 @@ const Skills = () => {
             transition={{ delay: 0.1, duration: 0.7 }}
           >
             Skills &{" "}
-            <span className="font-medium bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+            <span className="font-medium bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
               Technologies
             </span>
           </motion.h2>

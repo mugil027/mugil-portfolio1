@@ -55,11 +55,11 @@ function App() {
       {/* Scroll progress bar */}
       <ScrollProgress />
 
-      <main className="font-body min-h-screen bg-[#faf9f6] text-stone-900 dark:bg-[#0a0a0a] dark:text-white transition-colors duration-500 overflow-x-hidden">
+      <main className="font-body min-h-screen bg-[#F0F5FF] text-stone-900 dark:bg-[#070D1A] dark:text-white transition-colors duration-500 overflow-x-hidden">
         {/* ---------- PREMIUM NAVBAR ---------- */}
         <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? "py-2 border-b border-stone-200 dark:border-stone-800/30 bg-white/80 dark:bg-[#0a0a0a]/90 backdrop-blur-xl shadow-sm"
+            ? "py-2 border-b border-stone-200 dark:border-stone-800/30 bg-white/80 dark:bg-[#070D1A]/90 backdrop-blur-xl shadow-sm"
             : "py-4 bg-transparent"
         }`}>
           <div className="max-w-6xl mx-auto px-6 flex items-center justify-between gap-4">
@@ -77,33 +77,33 @@ function App() {
             <div className="hidden md:flex items-center gap-8 text-sm">
               <Link
                 to="/resume"
-                className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300"
+                className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 Resume
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
               </Link>
-              <a href="#projects" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
+              <a href="#projects" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                 Projects
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
               </a>
-              <a href="#contact" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors duration-300">
+              <a href="#contact" className="group relative font-body text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                 Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-500 to-blue-400 group-hover:w-full transition-all duration-300" />
               </a>
 
               {/* Premium Theme toggle */}
               <button
                 onClick={toggleTheme}
-                className="ml-2 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-body font-medium border border-stone-200 dark:border-stone-700/50 bg-white dark:bg-stone-900/70 shadow-sm hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500/30 transition-all duration-300"
+                className="ml-2 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-body font-medium border border-stone-200 dark:border-stone-700/50 bg-white dark:bg-stone-900/70 shadow-sm hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500/30 transition-all duration-300"
               >
                 {theme === "dark" ? (
                   <>
-                    <Sun className="w-4 h-4 text-amber-500" />
+                    <Sun className="w-4 h-4 text-blue-500" />
                     <span>Light</span>
                   </>
                 ) : (
                   <>
-                    <Moon className="w-4 h-4 text-amber-600" />
+                    <Moon className="w-4 h-4 text-blue-600" />
                     <span>Dark</span>
                   </>
                 )}
@@ -156,9 +156,9 @@ function App() {
                 className="inline-flex items-center justify-center rounded-full p-2.5 border border-stone-200 dark:border-stone-700/50 bg-white dark:bg-stone-900/70 shadow-sm"
               >
                 {theme === "dark" ? (
-                  <Sun className="w-4 h-4 text-amber-500" />
+                  <Sun className="w-4 h-4 text-blue-500" />
                 ) : (
-                  <Moon className="w-4 h-4 text-amber-600" />
+                  <Moon className="w-4 h-4 text-blue-600" />
                 )}
               </button>
               <button
@@ -190,7 +190,7 @@ function App() {
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                className="fixed top-0 right-0 h-full w-[70%] xs:w-[60%] sm:w-[50%] bg-[#faf9f6] dark:bg-[#0f0f0f] z-50 flex flex-col p-8 gap-6 shadow-[0_0_60px_rgba(0,0,0,0.3)]"
+                className="fixed top-0 right-0 h-full w-[70%] xs:w-[60%] sm:w-[50%] bg-[#F0F5FF] dark:bg-[#0A1628] z-50 flex flex-col p-8 gap-6 shadow-[0_0_60px_rgba(0,0,0,0.3)]"
               >
                 {/* Subtle grain texture */}
                 <div className="absolute inset-0 opacity-[0.02] bg-[url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNyIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiLz48L3N2Zz4=')]" />
@@ -206,34 +206,34 @@ function App() {
                   <a
                     href="#"
                     onClick={toggleMenu}
-                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Home
                   </a>
                   <Link
                     to="/resume"
                     onClick={toggleMenu}
-                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Resume
                   </Link>
                   <a
                     href="#projects"
                     onClick={toggleMenu}
-                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Projects
                   </a>
                   <a
                     href="#contact"
                     onClick={toggleMenu}
-                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                    className="font-body text-lg py-2 text-stone-700 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Contact
                   </a>
                 </nav>
 
-                <div className="relative h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent my-4" />
+                <div className="relative h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent my-4" />
 
                 <div className="relative flex gap-5">
                   <a
@@ -295,10 +295,10 @@ function App() {
         {/* ---------- PREMIUM CONTACT SECTION ---------- */}
         <section
           id="contact"
-          className="relative pt-12 pb-24 bg-gradient-to-b from-transparent via-[#faf9f6]/50 to-[#f5f3ef]/80 dark:via-[#0a0a0a]/50 dark:to-[#0f0f0f]/80"
+          className="relative pt-12 pb-24 bg-gradient-to-b from-transparent via-[#F0F5FF]/50 to-[#E8EFFF]/80 dark:via-[#070D1A]/50 dark:to-[#0A1628]/80"
         >
           {/* Decorative accents */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent via-amber-400/30 to-transparent" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent via-blue-400/30 to-transparent" />
 
           <div className="max-w-6xl mx-auto px-6">
             <motion.div
@@ -308,7 +308,7 @@ function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-700 dark:text-amber-400/70">
+              <span className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-700 dark:text-blue-400/70">
                 Get in Touch
               </span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-stone-800 dark:text-stone-100">
@@ -342,7 +342,7 @@ function App() {
               >
                 <SiGmail className="w-5 h-5 text-[#EA4335] relative z-10" />
                 <span className="relative z-10">Email Me</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <SiGmail className="absolute left-6 w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
                 <span className="absolute inset-0 flex items-center justify-center pl-7 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">Email Me</span>
               </a>
@@ -351,7 +351,7 @@ function App() {
                 href="https://github.com/mugil027"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-stone-800 font-heading font-medium tracking-wide ring-1 ring-stone-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:ring-amber-400 dark:bg-stone-800/80 dark:text-white dark:ring-stone-700/50 dark:hover:ring-amber-500/30 transition-all duration-300"
+                className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-stone-800 font-heading font-medium tracking-wide ring-1 ring-stone-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:ring-blue-400 dark:bg-stone-800/80 dark:text-white dark:ring-stone-700/50 dark:hover:ring-blue-500/30 transition-all duration-300"
               >
                 <FaGithub className="w-5 h-5" />
                 GitHub
@@ -361,8 +361,9 @@ function App() {
                 href="https://www.linkedin.com/in/mugil-m-47597a352/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-[#0A66C2] text-white font-heading font-medium tracking-wide shadow-lg shadow-[#0A66C2]/30 ring-1 ring-[#0A66C2]/70 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#0A66C2] text-white font-heading font-medium tracking-wide shadow-lg shadow-[#0A66C2]/30 ring-1 ring-[#0A66C2]/70 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
+                <FaLinkedin className="w-5 h-5" />
                 LinkedIn
               </a>
 

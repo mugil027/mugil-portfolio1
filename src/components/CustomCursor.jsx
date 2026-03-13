@@ -57,7 +57,7 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 rounded-full bg-amber-500 pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 rounded-full bg-blue-500 pointer-events-none z-[9999]"
         style={{
           x: dotX,
           y: dotY,
@@ -77,10 +77,10 @@ const CustomCursor = () => {
           height: isPointer ? 52 : 34,
           opacity: isVisible ? 0.55 : 0,
           borderColor: isPointer
-            ? "rgba(212,168,40,0.9)"
-            : "rgba(212,168,40,0.45)",
+            ? "rgba(37,99,235,0.9)"
+            : "rgba(37,99,235,0.45)",
           backgroundColor: isPointer
-            ? "rgba(212,168,40,0.08)"
+            ? "rgba(37,99,235,0.08)"
             : "transparent",
           borderWidth: "1px",
           borderStyle: "solid",

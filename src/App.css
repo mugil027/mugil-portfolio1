@@ -54,10 +54,10 @@
 
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(212, 168, 40, 0.2);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
   }
   50% {
-    box-shadow: 0 0 40px rgba(212, 168, 40, 0.4);
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.4);
   }
 }
 
@@ -143,15 +143,15 @@
   border-radius: inherit;
 }
 
-/* Luxury divider */
+/* Blue divider */
 .divider-luxury {
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 168, 40, 0.3),
-    rgba(212, 168, 40, 0.6),
-    rgba(212, 168, 40, 0.3),
+    rgba(37, 99, 235, 0.3),
+    rgba(37, 99, 235, 0.6),
+    rgba(37, 99, 235, 0.3),
     transparent
   );
 }
@@ -161,9 +161,9 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 168, 40, 0.2),
-    rgba(212, 168, 40, 0.4),
-    rgba(212, 168, 40, 0.2),
+    rgba(37, 99, 235, 0.2),
+    rgba(37, 99, 235, 0.4),
+    rgba(37, 99, 235, 0.2),
     transparent
   );
 }
@@ -181,9 +181,9 @@
 .border-gradient-premium {
   border: 1px solid transparent;
   background: linear-gradient(var(--bg-color, white), var(--bg-color, white)) padding-box,
-              linear-gradient(135deg, rgba(212, 168, 40, 0.3), rgba(212, 168, 40, 0.1), rgba(212, 168, 40, 0.3)) border-box;
+              linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.3)) border-box;
 }
 
 .dark .border-gradient-premium {
-  --bg-color: #1a1a1a;
+  --bg-color: #0D1B2A;
 }

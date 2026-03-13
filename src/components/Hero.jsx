@@ -6,9 +6,9 @@ const Hero = () => {
     <section className="relative min-h-[100vh] flex flex-col pt-24 pb-16">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f6f5f1] via-[#f8f7f3] to-[#f0eeea] dark:from-[#0c0c0b] dark:via-[#0f0f0d] dark:to-[#141412]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#EEF2FF] via-[#F5F8FF] to-[#E8F0FE] dark:from-[#070D1A] dark:via-[#0A1628] dark:to-[#0D1B2A]" />
         <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNyIgbnVtT2N0YXZlcz0iNCIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiLz48L3N2Zz4=')]" />
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-amber-200/25 via-transparent to-transparent dark:from-amber-500/10 blur-3xl rounded-full" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-blue-200/25 via-transparent to-transparent dark:from-blue-500/10 blur-3xl rounded-full" />
       </div>
 
       {/* ── HERO SPLIT ── */}
@@ -33,7 +33,7 @@ const Hero = () => {
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-tight">
             <span className="text-stone-900 dark:text-stone-100">I Build Systems</span>{" "}
             <motion.span
-              className="block mt-2 font-medium bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent"
+              className="block mt-2 font-medium bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
@@ -73,12 +73,12 @@ const Hero = () => {
               className="group relative inline-flex items-center justify-center px-7 py-3 rounded-full bg-stone-900 dark:bg-white text-white dark:text-stone-900 font-heading text-sm font-semibold tracking-wide shadow-lg shadow-stone-900/25 dark:shadow-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10">View Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="absolute inset-0 z-10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Projects</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-stone-300 dark:border-stone-700 font-heading text-sm font-semibold tracking-wide text-stone-700 dark:text-stone-200 bg-white dark:bg-stone-900/60 hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-400 shadow-sm hover:shadow-md transition-all duration-300"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-stone-300 dark:border-stone-700 font-heading text-sm font-semibold tracking-wide text-stone-700 dark:text-stone-200 bg-white dark:bg-stone-900/60 hover:border-blue-500 hover:text-blue-700 dark:hover:text-blue-400 shadow-sm hover:shadow-md transition-all duration-300"
             >
               Get in touch
             </a>
@@ -93,11 +93,11 @@ const Hero = () => {
           transition={{ duration: 0.9, delay: 0.1, ease: "easeOut" }}
         >
           <div className="relative w-full max-w-md">
-            <div className="relative rounded-[32px] bg-white dark:bg-[#141412]/95 border border-stone-200 dark:border-stone-800/50 p-10 flex flex-col items-center gap-6 shadow-[0_8px_40px_rgba(0,0,0,0.10)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
+            <div className="relative rounded-[32px] bg-white dark:bg-[#0D1B2A]/95 border border-stone-200 dark:border-stone-800/50 p-10 flex flex-col items-center gap-6 shadow-[0_8px_40px_rgba(0,0,0,0.10)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
 
-              {/* Premium DP with gold border */}
+              {/* Profile DP with blue border */}
               <div className="relative">
-                <div className="h-44 w-44 rounded-full bg-gradient-to-br from-amber-400 via-yellow-400 to-amber-500 p-[3px] shadow-lg shadow-amber-500/20">
+                <div className="h-44 w-44 rounded-full bg-gradient-to-br from-blue-400 via-blue-400 to-blue-500 p-[3px] shadow-lg shadow-blue-500/20">
                   <div className="h-full w-full rounded-full overflow-hidden bg-stone-900/90">
                     <img
                       src={mugilPhoto}
@@ -116,18 +116,18 @@ const Hero = () => {
                 <p className="font-body text-[12px] uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
                   Full Stack Engineer
                 </p>
-                <p className="font-display text-[22px] font-semibold tracking-wide bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+                <p className="font-display text-[22px] font-semibold tracking-wide bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
                   Founder of Socionn
                 </p>
                 <div className="mt-3 flex flex-col items-center gap-1.5 md:flex-row md:justify-center md:gap-4 text-[11px] text-stone-500 dark:text-stone-500">
                   <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500/70" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 text-blue-600 dark:text-blue-500/70" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M2 4h20v16H2V4zm10 9L3.5 6.5h17L12 13z" />
                     </svg>
                     mugilwork27@gmail.com
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500/70" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 text-blue-600 dark:text-blue-500/70" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M6.6 10.8a15.4 15.4 0 006.6 6.6l2.2-2.2a1 1 0 011-.25c1.1.36 2.3.56 3.6.56a1 1 0 011 1V21a1 1 0 01-1 1C9.4 22 2 14.6 2 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.5.6 3.6a1 1 0 01-.25 1l-2.25 2.2z"/>
                     </svg>
                     +91 9880451553
@@ -136,7 +136,7 @@ const Hero = () => {
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-400/50 dark:via-amber-500/20 to-transparent" />
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-blue-400/50 dark:via-blue-500/20 to-transparent" />
 
               {/* Bio */}
               <p className="font-body text-sm text-stone-600 dark:text-stone-300 text-center leading-relaxed max-w-sm">
@@ -160,7 +160,7 @@ const Hero = () => {
           {/* Section Header */}
           <div className="text-center mb-12">
             <motion.p
-              className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-700 dark:text-amber-400/80 mb-4"
+              className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-700 dark:text-blue-400/80 mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -170,7 +170,7 @@ const Hero = () => {
             </motion.p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-stone-900 dark:text-stone-100">
               The Engineer Behind{" "}
-              <span className="font-medium bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+              <span className="font-medium bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
                 Socionn
               </span>
             </h2>
@@ -181,14 +181,14 @@ const Hero = () => {
 
             {/* Left — Socionn */}
             <motion.div
-              className="relative rounded-[24px] bg-white dark:bg-[#141412]/90 border border-stone-200 dark:border-stone-800/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.4)]"
+              className="relative rounded-[24px] bg-white dark:bg-[#0D1B2A]/90 border border-stone-200 dark:border-stone-800/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.4)]"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center shadow-md shadow-amber-500/25">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-500 flex items-center justify-center shadow-md shadow-blue-500/25">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
@@ -221,14 +221,14 @@ const Hero = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 + index * 0.05, duration: 0.5 }}
                   >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 flex-shrink-0" />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 flex-shrink-0" />
                     {item}
                   </motion.li>
                 ))}
               </ul>
 
-              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/30">
-                <p className="font-display text-sm font-medium text-amber-800 dark:text-amber-300 italic text-center">
+              <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800/30">
+                <p className="font-display text-sm font-medium text-blue-800 dark:text-blue-300 italic text-center">
                   Every backend service, database model, API, and optimization was built by me from the ground up.
                 </p>
               </div>
@@ -236,14 +236,14 @@ const Hero = () => {
 
             {/* Right — Data Engineering */}
             <motion.div
-              className="relative rounded-[24px] bg-white dark:bg-[#141412]/90 border border-stone-200 dark:border-stone-800/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.4)]"
+              className="relative rounded-[24px] bg-white dark:bg-[#0D1B2A]/90 border border-stone-200 dark:border-stone-800/50 p-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.4)]"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.7 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center shadow-md shadow-amber-500/25">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-500 flex items-center justify-center shadow-md shadow-blue-500/25">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
                   </svg>
@@ -272,7 +272,7 @@ const Hero = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + index * 0.05, duration: 0.5 }}
                   >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 flex-shrink-0" />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 flex-shrink-0" />
                     {item}
                   </motion.li>
                 ))}
@@ -286,7 +286,7 @@ const Hero = () => {
                   <span className="font-semibold text-stone-900 dark:text-stone-100">MSc in Big Data Analytics</span>{" "}
                   while continuously building, shipping, and scaling real-world engineering products.
                 </p>
-                <p className="font-display text-base font-semibold bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+                <p className="font-display text-base font-semibold bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
                   I don't just "work with data" or "build features" — I own systems, from design to production.
                 </p>
               </div>
@@ -341,7 +341,7 @@ const Hero = () => {
               href="https://www.socionn.com/about"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 font-medium transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-sm text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-300"
             >
               Want to know more about Socionn and its future goals?
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

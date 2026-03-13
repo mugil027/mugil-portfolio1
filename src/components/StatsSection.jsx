@@ -54,11 +54,11 @@ const StatCard = ({ stat, index }) => {
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.23, 1, 0.32, 1] }}
-      className="relative group rounded-2xl bg-white dark:bg-[#141414]/80 border border-stone-200 dark:border-stone-800/50 p-6 hover:border-amber-500/50 dark:hover:border-amber-600/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-all duration-300 overflow-hidden"
+      className="relative group rounded-2xl bg-white dark:bg-[#0F1E30]/80 border border-stone-200 dark:border-stone-800/50 p-6 hover:border-blue-500/50 dark:hover:border-blue-600/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-all duration-300 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-500/0 group-hover:from-amber-500/[0.03] group-hover:to-yellow-500/[0.03] transition-all duration-400 rounded-2xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/[0.03] group-hover:to-blue-500/[0.03] transition-all duration-400 rounded-2xl pointer-events-none" />
       <div className="relative">
-        <div className="font-display text-4xl md:text-5xl font-semibold mb-1 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+        <div className="font-display text-4xl md:text-5xl font-semibold mb-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
           <CounterValue target={stat.value} suffix={stat.suffix} isInView={isInView} />
         </div>
         <p className="font-heading text-sm font-semibold text-stone-800 dark:text-stone-100 mb-1">
@@ -77,14 +77,14 @@ const StatsSection = () => {
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-24 bg-[#f0eeea] dark:bg-transparent">
+    <section className="relative py-24 bg-[#E8F0FE] dark:bg-transparent">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-stone-300 dark:via-stone-800 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-stone-300 dark:via-stone-800 to-transparent" />
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div ref={sectionRef} className="text-center mb-14">
           <motion.p
-            className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-700 dark:text-amber-400 mb-4"
+            className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-700 dark:text-blue-400 mb-4"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -98,7 +98,7 @@ const StatsSection = () => {
             transition={{ delay: 0.1, duration: 0.7 }}
           >
             Key{" "}
-            <span className="font-medium bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+            <span className="font-medium bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
               Achievements
             </span>
           </motion.h2>

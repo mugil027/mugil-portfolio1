@@ -14,7 +14,7 @@ const ScrollProgress = () => {
       style={{
         scaleX,
         background:
-          "linear-gradient(90deg, #b8922d 0%, #d4a828 30%, #f9d44b 50%, #d4a828 70%, #b8922d 100%)",
+          "linear-gradient(90deg, #1D4ED8 0%, #2563EB 30%, #93C5FD 50%, #2563EB 70%, #1D4ED8 100%)",
       }}
     />
   );

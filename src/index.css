@@ -13,12 +13,12 @@
 
 /* ── DESIGN TOKENS ────────────────────────────────────────────────────────── */
 :root {
-  /* Refined gold — deeper, more luxurious */
-  --gold-300: #f0cc60;
-  --gold-400: #d9a820;
-  --gold-500: #c09018;
-  --gold-600: #a07812;
-  --gold-700: #826010;
+  /* Professional blue palette */
+  --blue-300: #93C5FD;
+  --blue-400: #60A5FA;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
 
   /* Typography scale */
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
@@ -26,7 +26,7 @@
   --font-body:    'Inter', 'Helvetica Neue', system-ui, sans-serif;
 
   /* Light mode colours */
-  --color-bg:        #f6f5f1;
+  --color-bg:        #EEF2FF;
   --color-surface:   #ffffff;
   --color-border:    rgba(0,0,0,0.08);
   --color-text-1:    #0f0f0e;   /* headings   */
@@ -38,15 +38,15 @@
   --shadow-soft:     0 2px 10px -2px rgba(0,0,0,0.06);
   --shadow-medium:   0 8px 28px -6px rgba(0,0,0,0.10);
   --shadow-elevated: 0 22px 60px -14px rgba(0,0,0,0.16);
-  --shadow-glow:     0 0 50px -8px rgba(192,144,24,0.28);
+  --shadow-glow:     0 0 50px -8px rgba(37,99,235,0.28);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ── DARK MODE TOKENS ─────────────────────────────────────────────────────── */
 .dark {
-  --color-bg:        #0c0c0b;
-  --color-surface:   #141412;
+  --color-bg:        #070D1A;
+  --color-surface:   #0D1B2A;
   --color-border:    rgba(255,255,255,0.07);
   --color-text-1:    #f0ede7;   /* headings   */
   --color-text-2:    #c4bfb6;   /* body       */
@@ -56,7 +56,7 @@
   --shadow-soft:     0 2px 10px -2px rgba(0,0,0,0.4);
   --shadow-medium:   0 8px 28px -6px rgba(0,0,0,0.55);
   --shadow-elevated: 0 22px 60px -14px rgba(0,0,0,0.70);
-  --shadow-glow:     0 0 60px -8px rgba(192,144,24,0.18);
+  --shadow-glow:     0 0 60px -8px rgba(37,99,235,0.18);
 }
 
 /* ── BASE ─────────────────────────────────────────────────────────────────── */
@@ -85,7 +85,7 @@ body {
 
 /* ── SELECTION ────────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(192, 144, 24, 0.20);
+  background: rgba(37, 99, 235, 0.20);
   color: inherit;
 }
 
@@ -93,11 +93,11 @@ body {
 ::-webkit-scrollbar        { width: 6px; }
 ::-webkit-scrollbar-track  { background: transparent; }
 ::-webkit-scrollbar-thumb  {
-  background: linear-gradient(180deg, rgba(192,144,24,0.4), rgba(160,120,18,0.6));
+  background: linear-gradient(180deg, rgba(37,99,235,0.4), rgba(29,78,216,0.6));
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(192,144,24,0.65), rgba(160,120,18,0.85));
+  background: linear-gradient(180deg, rgba(37,99,235,0.65), rgba(29,78,216,0.85));
 }
 
 /* ── UTILITY CLASSES ──────────────────────────────────────────────────────── */
@@ -123,7 +123,7 @@ body {
 
   /* Gradient text */
   .text-gradient-gold {
-    background: linear-gradient(130deg, #c09018 0%, #d9a820 40%, #f0cc60 65%, #c09018 100%);
+    background: linear-gradient(130deg, #2563EB 0%, #3B82F6 40%, #93C5FD 65%, #2563EB 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -149,7 +149,7 @@ body {
 
   /* Border gradient */
   .border-gradient-gold {
-    border-image: linear-gradient(135deg, #c09018, #d9a820, #a07812) 1;
+    border-image: linear-gradient(135deg, #2563EB, #3B82F6, #1D4ED8) 1;
   }
 }
 
@@ -221,21 +221,21 @@ body {
 
 /* ── SWIPER ───────────────────────────────────────────────────────────────── */
 .swiper-pagination-bullet {
-  background: rgba(192,144,24,0.35) !important;
+  background: rgba(37,99,235,0.35) !important;
   width: 7px !important; height: 7px !important;
   transition: all 0.3s ease !important;
 }
 .swiper-pagination-bullet-active {
-  background: linear-gradient(135deg, #c09018, #d9a820) !important;
+  background: linear-gradient(135deg, #2563EB, #3B82F6) !important;
   width: 22px !important;
   border-radius: 100px !important;
 }
 .swiper-button-next, .swiper-button-prev {
-  color: #c09018 !important;
+  color: #2563EB !important;
   transition: all 0.3s ease !important;
 }
 .swiper-button-next:hover, .swiper-button-prev:hover {
-  color: #d9a820 !important;
+  color: #3B82F6 !important;
   transform: scale(1.1);
 }
 
@@ -249,7 +249,7 @@ body {
   position: absolute;
   bottom: -2px; left: 0;
   width: 0; height: 1px;
-  background: linear-gradient(90deg, #c09018, #d9a820);
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .link-premium:hover::after { width: 100%; }

@@ -11,7 +11,7 @@ const skillGroups = [
   {
     label: "Languages",
     skills: ["Python", "JavaScript / TypeScript", "SQL", "HTML5", "CSS3"],
-    color: "amber",
+    color: "blue",
   },
   {
     label: "Frontend",
@@ -46,7 +46,6 @@ const skillGroups = [
 ];
 
 const badgeColors = {
-  amber: "bg-amber-100/80 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 border border-amber-200/60 dark:border-amber-700/30",
   blue: "bg-blue-100/80 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 border border-blue-200/60 dark:border-blue-700/30",
   emerald: "bg-emerald-100/80 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/30",
   purple: "bg-purple-100/80 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 border border-purple-200/60 dark:border-purple-700/30",
@@ -158,7 +157,7 @@ const SectionTitle = ({ label, title, accent }) => {
   return (
     <div ref={ref} className="mb-10">
       <motion.p
-        className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-600/80 dark:text-amber-400/70 mb-3"
+        className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-600/80 dark:text-blue-400/70 mb-3"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5 }}
@@ -173,13 +172,13 @@ const SectionTitle = ({ label, title, accent }) => {
       >
         {title}{" "}
         {accent && (
-          <span className="font-medium bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+          <span className="font-medium bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
             {accent}
           </span>
         )}
       </motion.h2>
       <motion.div
-        className="mt-4 h-px w-16 bg-gradient-to-r from-amber-500 to-yellow-400"
+        className="mt-4 h-px w-16 bg-gradient-to-r from-blue-500 to-blue-400"
         initial={{ scaleX: 0, originX: 0 }}
         animate={isInView ? { scaleX: 1 } : {}}
         transition={{ delay: 0.25, duration: 0.6 }}
@@ -208,19 +207,19 @@ const Resume = () => {
   const toggleTheme = () => setTheme((p) => (p === "dark" ? "light" : "dark"));
 
   return (
-    <main className="font-body min-h-screen bg-[#faf9f6] text-stone-900 dark:bg-[#0a0a0a] dark:text-white transition-colors duration-500 overflow-x-hidden">
+    <main className="font-body min-h-screen bg-[#F0F5FF] text-stone-900 dark:bg-[#070D1A] dark:text-white transition-colors duration-500 overflow-x-hidden">
       {/* Background texture */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#faf9f6] to-[#f5f3ef] dark:from-[#0a0a0a] dark:to-[#0f0f0f]" />
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-amber-200/15 via-transparent to-transparent dark:from-amber-800/10 blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F0F5FF] to-[#E8EFFF] dark:from-[#070D1A] dark:to-[#0A1628]" />
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-blue-200/15 via-transparent to-transparent dark:from-blue-800/10 blur-3xl rounded-full" />
       </div>
 
       {/* ── NAVBAR ── */}
-      <nav className="fixed top-0 left-0 w-full z-50 py-3 border-b border-stone-200/50 dark:border-stone-800/30 bg-white/80 dark:bg-[#0a0a0a]/90 backdrop-blur-xl">
+      <nav className="fixed top-0 left-0 w-full z-50 py-3 border-b border-stone-200/50 dark:border-stone-800/30 bg-white/80 dark:bg-[#070D1A]/90 backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-6 flex items-center justify-between gap-4">
           <Link
             to="/"
-            className="group flex items-center gap-3 font-heading font-semibold text-sm tracking-tight text-stone-600 dark:text-stone-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+            className="group flex items-center gap-3 font-heading font-semibold text-sm tracking-tight text-stone-600 dark:text-stone-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-stone-900 to-stone-800 text-white dark:from-white dark:to-stone-200 dark:text-stone-900 text-xs font-bold shadow-md">
               MM
@@ -234,19 +233,19 @@ const Resume = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-body font-medium border border-stone-200/80 dark:border-stone-700/50 bg-white/70 dark:bg-stone-900/70 hover:border-amber-400/50 transition-all duration-300"
+              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-body font-medium border border-stone-200/80 dark:border-stone-700/50 bg-white/70 dark:bg-stone-900/70 hover:border-blue-400/50 transition-all duration-300"
             >
               {theme === "dark" ? (
-                <><Sun className="w-3.5 h-3.5 text-amber-500" /><span>Light</span></>
+                <><Sun className="w-3.5 h-3.5 text-blue-500" /><span>Light</span></>
               ) : (
-                <><Moon className="w-3.5 h-3.5 text-amber-600" /><span>Dark</span></>
+                <><Moon className="w-3.5 h-3.5 text-blue-600" /><span>Dark</span></>
               )}
             </button>
             <a
               href="/Mugil_M_FE.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-600 to-yellow-500 text-white text-xs font-heading font-medium tracking-wide shadow-lg shadow-amber-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xs font-heading font-medium tracking-wide shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
               <Download className="w-3.5 h-3.5" />
               Download PDF
@@ -264,12 +263,12 @@ const Resume = () => {
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
             {/* Name */}
-            <p className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-600/80 dark:text-amber-400/70 mb-3">
+            <p className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-600/80 dark:text-blue-400/70 mb-3">
               Curriculum Vitae
             </p>
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-light tracking-tight text-stone-800 dark:text-stone-100 leading-[1.05] mb-4">
               Mugil{" "}
-              <span className="font-semibold bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 dark:from-amber-400 dark:via-yellow-300 dark:to-amber-400 bg-clip-text text-transparent">
+              <span className="font-semibold bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 dark:from-blue-400 dark:via-blue-300 dark:to-blue-400 bg-clip-text text-transparent">
                 Muraleedharan
               </span>
             </h1>
@@ -290,7 +289,7 @@ const Resume = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full font-body text-xs text-stone-600 dark:text-stone-300 bg-white/80 dark:bg-stone-900/60 border border-stone-200/70 dark:border-stone-700/40 hover:border-amber-400/50 dark:hover:border-amber-600/30 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-250 shadow-sm"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full font-body text-xs text-stone-600 dark:text-stone-300 bg-white/80 dark:bg-stone-900/60 border border-stone-200/70 dark:border-stone-700/40 hover:border-blue-400/50 dark:hover:border-blue-600/30 hover:text-blue-700 dark:hover:text-blue-400 transition-all duration-250 shadow-sm"
                 >
                   {item.icon}
                   {item.label}
@@ -299,16 +298,16 @@ const Resume = () => {
             </div>
 
             {/* Summary */}
-            <div className="relative rounded-2xl bg-white/80 dark:bg-[#141414]/90 border border-stone-200/70 dark:border-stone-800/40 p-7 shadow-[0_15px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-              <div className="absolute top-0 left-8 w-16 h-[2px] bg-gradient-to-r from-amber-500 to-yellow-400" />
+            <div className="relative rounded-2xl bg-white/80 dark:bg-[#0F1E30]/90 border border-stone-200/70 dark:border-stone-800/40 p-7 shadow-[0_15px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+              <div className="absolute top-0 left-8 w-16 h-[2px] bg-gradient-to-r from-blue-500 to-blue-400" />
               <p className="font-body text-stone-700 dark:text-stone-200 leading-relaxed text-[15px]">
                 Software Engineer specializing in{" "}
                 <span className="font-medium text-stone-900 dark:text-white">scalable distributed systems</span> and{" "}
                 <span className="font-medium text-stone-900 dark:text-white">real-time infrastructure</span>. Sole architect of a production-grade social platform supporting{" "}
-                <span className="font-medium text-amber-700 dark:text-amber-400">10K+ concurrent users</span> and{" "}
-                <span className="font-medium text-amber-700 dark:text-amber-400">100K+ daily API requests</span> with{" "}
-                <span className="font-medium text-amber-700 dark:text-amber-400">&lt;200ms p95 latency</span> and 99.9% uptime. Experienced in modern frontend frameworks including React.js & Next.js, Vue.js & Nuxt.js. Strong in backend architecture using FastAPI and Express, distributed system design, real-time messaging, and cloud-native deployment. Additionally built production ELT/ETL pipelines with Airflow, dbt, Snowflake, and Kafka, processing{" "}
-                <span className="font-medium text-amber-700 dark:text-amber-400">100K+ records daily</span> with sub-100ms streaming latency.
+                <span className="font-medium text-blue-700 dark:text-blue-400">10K+ concurrent users</span> and{" "}
+                <span className="font-medium text-blue-700 dark:text-blue-400">100K+ daily API requests</span> with{" "}
+                <span className="font-medium text-blue-700 dark:text-blue-400">&lt;200ms p95 latency</span> and 99.9% uptime. Experienced in modern frontend frameworks including React.js & Next.js, Vue.js & Nuxt.js. Strong in backend architecture using FastAPI and Express, distributed system design, real-time messaging, and cloud-native deployment. Additionally built production ELT/ETL pipelines with Airflow, dbt, Snowflake, and Kafka, processing{" "}
+                <span className="font-medium text-blue-700 dark:text-blue-400">100K+ records daily</span> with sub-100ms streaming latency.
               </p>
             </div>
           </motion.div>
@@ -359,8 +358,8 @@ const Resume = () => {
           <SectionTitle label="Work" title="Professional" accent="Experience" />
           {experience.map((job, ji) => (
             <FadeIn key={ji} delay={0.05}>
-              <div className="relative rounded-2xl bg-white/80 dark:bg-[#141414]/90 border border-amber-300/40 dark:border-amber-700/30 p-8 shadow-[0_15px_50px_rgba(0,0,0,0.07)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl mb-8">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/[0.04] to-transparent pointer-events-none" />
+              <div className="relative rounded-2xl bg-white/80 dark:bg-[#0F1E30]/90 border border-blue-300/40 dark:border-blue-700/30 p-8 shadow-[0_15px_50px_rgba(0,0,0,0.07)] dark:shadow-[0_15px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl mb-8">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/[0.04] to-transparent pointer-events-none" />
                 <div className="relative">
                   {/* Job header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
@@ -373,7 +372,7 @@ const Resume = () => {
                           href={job.companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-body text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium text-sm flex items-center gap-1 transition-colors"
+                          className="font-body text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm flex items-center gap-1 transition-colors"
                         >
                           {job.company}
                           <ExternalLink className="w-3 h-3" />
@@ -414,7 +413,7 @@ const Resume = () => {
                         transition={{ delay: bi * 0.06, duration: 0.5 }}
                         className="flex items-start gap-3 font-body text-sm text-stone-600 dark:text-stone-300 leading-relaxed"
                       >
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 flex-shrink-0" />
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 flex-shrink-0" />
                         <span>
                           <span className="font-semibold text-stone-800 dark:text-stone-100">{b.bold}</span>
                           {b.text}
@@ -430,7 +429,7 @@ const Resume = () => {
           {/* Featured Projects */}
           {featuredProjects.map((proj, pi) => (
             <FadeIn key={pi} delay={0.08}>
-              <div className="relative rounded-2xl bg-white/80 dark:bg-[#141414]/90 border border-stone-200/70 dark:border-stone-800/40 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+              <div className="relative rounded-2xl bg-white/80 dark:bg-[#0F1E30]/90 border border-stone-200/70 dark:border-stone-800/40 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                   <div>
                     <h3 className="font-heading text-lg font-bold text-stone-900 dark:text-white">
@@ -445,7 +444,7 @@ const Resume = () => {
                       href={proj.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 text-xs font-heading font-medium border border-amber-200/60 dark:border-amber-700/30 hover:shadow-md transition-all duration-250 flex-shrink-0"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 text-xs font-heading font-medium border border-blue-200/60 dark:border-blue-700/30 hover:shadow-md transition-all duration-250 flex-shrink-0"
                     >
                       <ExternalLink className="w-3 h-3" />
                       Live Demo
@@ -471,7 +470,7 @@ const Resume = () => {
                       transition={{ delay: bi * 0.05, duration: 0.5 }}
                       className="flex items-start gap-3 font-body text-sm text-stone-600 dark:text-stone-300 leading-relaxed"
                     >
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 flex-shrink-0" />
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 flex-shrink-0" />
                       <span>
                         <span className="font-semibold text-stone-800 dark:text-stone-100">{b.bold}</span>
                         {b.text}
@@ -490,7 +489,7 @@ const Resume = () => {
           <div className="space-y-6">
             {infraProjects.map((proj, pi) => (
               <FadeIn key={pi} delay={pi * 0.05}>
-                <div className="relative rounded-2xl bg-white/80 dark:bg-[#141414]/90 border border-stone-200/70 dark:border-stone-800/40 p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl">
+                <div className="relative rounded-2xl bg-white/80 dark:bg-[#0F1E30]/90 border border-stone-200/70 dark:border-stone-800/40 p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl">
                   <div className="mb-4">
                     <h3 className="font-heading text-base font-bold text-stone-900 dark:text-white mb-2">
                       {proj.title}
@@ -509,7 +508,7 @@ const Resume = () => {
                         key={bi}
                         className="flex items-start gap-3 font-body text-sm text-stone-600 dark:text-stone-300 leading-relaxed"
                       >
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 flex-shrink-0" />
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-500 flex-shrink-0" />
                         {b}
                       </li>
                     ))}
@@ -532,10 +531,10 @@ const Resume = () => {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ delay: ai * 0.05, duration: 0.55 }}
-                  className="group flex items-start gap-4 rounded-2xl bg-white/70 dark:bg-[#141414]/80 border border-stone-200/60 dark:border-stone-800/40 p-5 hover:border-amber-400/40 dark:hover:border-amber-600/30 hover:shadow-md transition-all duration-300"
+                  className="group flex items-start gap-4 rounded-2xl bg-white/70 dark:bg-[#0F1E30]/80 border border-stone-200/60 dark:border-stone-800/40 p-5 hover:border-blue-400/40 dark:hover:border-blue-600/30 hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex-shrink-0 pt-0.5">
-                    <span className="font-display text-2xl font-semibold bg-gradient-to-r from-amber-600 to-yellow-500 dark:from-amber-400 dark:to-yellow-300 bg-clip-text text-transparent">
+                    <span className="font-display text-2xl font-semibold bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
                       {a.value}
                     </span>
                   </div>
@@ -576,7 +575,7 @@ const Resume = () => {
               },
             ].map((edu, ei) => (
               <FadeIn key={ei} delay={ei * 0.08}>
-                <div className="relative rounded-2xl bg-white/80 dark:bg-[#141414]/90 border border-stone-200/70 dark:border-stone-800/40 p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl">
+                <div className="relative rounded-2xl bg-white/80 dark:bg-[#0F1E30]/90 border border-stone-200/70 dark:border-stone-800/40 p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-xl">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <h3 className="font-heading text-lg font-bold text-stone-900 dark:text-white">
@@ -603,15 +602,15 @@ const Resume = () => {
 
         {/* ── BOTTOM CTA ── */}
         <FadeIn>
-          <div className="relative rounded-2xl bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 dark:from-[#0f0f0f] dark:via-[#141414] dark:to-[#0f0f0f] p-10 text-center border border-stone-700/30 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/5 pointer-events-none" />
+          <div className="relative rounded-2xl bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 dark:from-[#0A1628] dark:via-[#0F1E30] dark:to-[#0A1628] p-10 text-center border border-stone-700/30 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-blue-500/5 pointer-events-none" />
             <div className="relative">
-              <p className="font-body text-[11px] uppercase tracking-[0.4em] text-amber-400/70 mb-3">
+              <p className="font-body text-[11px] uppercase tracking-[0.4em] text-blue-400/70 mb-3">
                 Open to Opportunities
               </p>
               <h2 className="font-display text-3xl sm:text-4xl font-light text-white mb-4">
                 Let's build something{" "}
-                <span className="font-medium bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+                <span className="font-medium bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 bg-clip-text text-transparent">
                   extraordinary
                 </span>
               </h2>
@@ -623,7 +622,7 @@ const Resume = () => {
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=mugil272000@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 to-yellow-500 text-white font-heading text-sm font-medium tracking-wide shadow-lg shadow-amber-500/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-heading text-sm font-medium tracking-wide shadow-lg shadow-blue-500/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <SiGmail className="w-4 h-4" />
                   Get in Touch
