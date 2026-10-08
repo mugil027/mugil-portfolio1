@@ -12,11 +12,11 @@ export const links = {
 export const roles = ["Full Stack Engineer", "Data Architect", "Founder of Socionn", "MSc Big Data Analytics"];
 
 export const heroBio =
-  "I build production-grade systems from scratch — social media platforms, data pipelines, AI applications. One engineer, end to end.";
+  "I build production-grade systems from scratch: social media platforms, data pipelines, AI applications. One engineer, end to end.";
 
 export const about = {
-  lead: "I'm Mugil — a Full Stack Engineer and the sole architect of Socionn, a production social media platform serving 10K+ concurrent users, built entirely by one person.",
-  body: "Currently pursuing MSc Big Data Analytics, I work across the entire stack — from Flutter mobile apps to Kafka pipelines, from FastAPI backends to Snowflake data warehouses. No templates. No shortcuts. Every system engineered from the ground up.",
+  lead: "I'm Mugil, a Full Stack Engineer and the sole architect of Socionn, a production social media platform serving 10K+ concurrent users, built entirely by one person.",
+  body: "Currently pursuing MSc Big Data Analytics, I work across the entire stack, from Flutter mobile apps to Kafka pipelines, from FastAPI backends to Snowflake data warehouses. No templates. No shortcuts. Every system engineered from the ground up.",
   summary:
     "Software Engineer specializing in scalable distributed systems and real-time infrastructure. Sole architect of a production-grade social platform supporting 10K+ concurrent users and 100K+ daily API requests with <200ms p95 latency and 99.9% uptime. Experienced in modern frontend frameworks including React.js & Next.js, Vue.js & Nuxt.js. Strong in backend architecture using FastAPI and Express, distributed system design, real-time messaging, and cloud-native deployment. Additionally built production ELT/ETL pipelines with Airflow, dbt, Snowflake, and Kafka, processing 100K+ records daily with sub-100ms streaming latency.",
 };
@@ -27,7 +27,7 @@ export const journey = [
     title: "The Origin Story",
     subtitle: "BSc Computer Science",
     description:
-      "Started my journey into computer science. Fell in love with building things from scratch — every line of code felt like writing a new chapter.",
+      "Started my journey into computer science. Fell in love with building things from scratch, every line of code felt like writing a new chapter.",
     tech: ["Python", "Java", "C", "Data Structures"],
   },
   {
@@ -43,14 +43,14 @@ export const journey = [
     title: "The Socionn Chapter",
     subtitle: "Founded & Built a Full Social Media Platform",
     description:
-      "Designed, implemented, and deployed Socionn — a full-scale social media platform with real-time WebSockets, reels system, video transcoding, CDN delivery, and scalable infrastructure. Alone.",
+      "Designed, implemented, and deployed Socionn, a full-scale social media platform with real-time WebSockets, reels system, video transcoding, CDN delivery, and scalable infrastructure. Alone.",
     tech: ["Flutter", "FastAPI", "PostgreSQL", "Redis", "AWS", "WebSockets"],
     flagship: true,
   },
   {
     year: "2026",
     title: "Live on the Stores",
-    subtitle: "Socionn on Android & iOS — Now",
+    subtitle: "Socionn on Android & iOS · Now",
     description:
       "Socionn officially launches on Google Play and App Store. 5K+ concurrent chat sessions, 500+ video uploads/day, 10K+ concurrent users, 99.9% uptime. The dream is live.",
     tech: ["Android", "iOS", "Production", "Scale"],

@@ -8,7 +8,7 @@ export default function Contact() {
     <section id="contact" className="section border-t border-line">
       <div className="wrap">
         <Reveal>
-          <p className="eyebrow mb-4">06 — Contact · Let's Connect</p>
+          <p className="eyebrow mb-4">06 · Contact · Let's Connect</p>
           <h2 className="font-display text-[clamp(2.5rem,6.5vw,5rem)] font-medium leading-[1.02] tracking-tight">
             Ready to <em className="text-accent">build</em> something?
           </h2>

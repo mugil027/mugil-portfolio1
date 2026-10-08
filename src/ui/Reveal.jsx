@@ -18,7 +18,7 @@ export default function Reveal({ children, delay = 0, className = "", as = "div"
 export function SectionHead({ index, label, title, intro }) {
   return (
     <Reveal className="mb-14 max-w-2xl">
-      <p className="eyebrow mb-4">{index} — {label}</p>
+      <p className="eyebrow mb-4">{index} · {label}</p>
       <h2 className="h2">{title}</h2>
       {intro && <p className="mt-5 text-muted">{intro}</p>}
     </Reveal>
