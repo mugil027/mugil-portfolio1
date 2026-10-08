@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "../ui/ThemeToggle";
+import portrait from "../assets/Mypic.jpeg";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -43,7 +44,7 @@ export default function Navbar({ theme, onToggleTheme }) {
     <header className={`fixed inset-x-0 top-0 z-50 transition duration-300 border-b border-line bg-bg/95 backdrop-blur-xl ${scrolled ? "shadow-sm" : ""}`}>
       <div className="wrap flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5 text-sm font-medium tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded bg-[#0a1a33] font-mono text-xs font-medium text-white">MM</span>
+          <img src={portrait} alt="Mugil" className="h-9 w-9 rounded-full border border-line object-cover object-[50%_15%]" />
           <span className="hidden font-display text-base sm:inline">Mugil Muraleedharan</span>
         </a>
 
