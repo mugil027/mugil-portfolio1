@@ -3,7 +3,7 @@ import { about, journey } from "../data/profile";
 
 export default function About() {
   return (
-    <section id="about" className="section pt-40 md:pt-48">
+    <section id="about" className="section pt-20 md:pt-24">
       <div className="wrap">
         <SectionHead index="01" label="About / My Chronicle" title="One engineer, end to end." intro="Every system architect has an origin story. Here's mine." />
 
