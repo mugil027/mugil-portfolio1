@@ -41,6 +41,7 @@ export default function Navbar({ theme, onToggleTheme }) {
   }, [open]);
 
   return (
+    <>
     <header className={`fixed inset-x-0 top-0 z-50 transition duration-300 border-b border-line bg-bg/95 backdrop-blur-xl ${scrolled ? "shadow-sm" : ""}`}>
       <div className="wrap flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5 text-sm font-medium tracking-tight">
@@ -67,21 +68,23 @@ export default function Navbar({ theme, onToggleTheme }) {
         </div>
       </div>
 
+    </header>
+
       <AnimatePresence>
         {open && (
           <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-x-0 top-16 bottom-0 bg-bg px-6 py-8 md:hidden" aria-label="Mobile">
+            className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-bg px-6 py-8 md:hidden" aria-label="Mobile">
             <ul className="flex flex-col">
               {NAV.map(n => (
                 <li key={n.id} className="border-b border-line">
                   <a href={`#${n.id}`} onClick={() => setOpen(false)} className="block py-4 font-display text-3xl">{n.label}</a>
                 </li>
               ))}
-              <li className="pt-6"><Link to="/resume" className="btn-primary w-full">Resume</Link></li>
+              <li className="pt-6"><Link to="/resume" onClick={() => setOpen(false)} className="btn-primary w-full">Resume</Link></li>
             </ul>
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
